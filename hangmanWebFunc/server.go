@@ -10,9 +10,7 @@ import (
 )
 
 type Informations struct {
-	Email   string
-	Subject string
-	Message string
+	Email string
 }
 
 func Home(w http.ResponseWriter, r *http.Request) {
@@ -23,8 +21,9 @@ func Home(w http.ResponseWriter, r *http.Request) {
 	template.Execute(w, nil)
 }
 
-func Infos(w http.ResponseWriter, r *http.Request, infos *Informations) {
-	template, err := template.ParseFiles("./pages/infos.html", "./templates/footer.html")
+func Test(w http.ResponseWriter, r *http.Request, infos *Informations) {
+	infos.Email = r.FormValue("Text input")
+	template, err := template.ParseFiles("./pages/infos.html", "./templates/footer.html", "./templates/informations.html")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -32,11 +31,11 @@ func Infos(w http.ResponseWriter, r *http.Request, infos *Informations) {
 }
 
 func Server() {
+	var infos Informations
 	fmt.Print(hangman.RandomWordUnderscore("portemanteau"))
-	infos := &Informations{"kilianmoun@gmail.com", "sujet message", "message"}
 	http.HandleFunc("/", Home)
-	http.HandleFunc("/infos", func(w http.ResponseWriter, r *http.Request) {
-		Infos(w, r, infos)
+	http.HandleFunc("/hangman", func(w http.ResponseWriter, r *http.Request) {
+		Test(w, r, &infos)
 	})
 	fs := http.FileServer(http.Dir("static/"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
