@@ -2,8 +2,9 @@ module hangmanWeb
 
 go 1.21.0
 
+require github.com/MounKilian/hangman v0.0.0-20231214153832-718e4b3435a7 // direct
+
 require (
-	github.com/MounKilian/hangman v0.0.0-20231212172027-e1a67ee38edd // direct
 	github.com/gdamore/encoding v1.0.0 // indirect
 	github.com/gdamore/tcell/v2 v2.6.0 // indirect
 	github.com/lucasb-eyer/go-colorful v1.2.0 // indirect

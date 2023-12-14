@@ -8,9 +8,16 @@ import (
 
 func Server() {
 	H := hangman.New("words.txt", "rien")
-	http.HandleFunc("/", Home)
+	letteruse := ""
+	for _, i := range hangman.LettersUse(H) {
+		letteruse += i + " | "
+	}
+	H.Letters = letteruse
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		Form(w, r, H)
+	})
 	http.HandleFunc("/hangman", func(w http.ResponseWriter, r *http.Request) {
-		Test(w, r, H)
+		GameBack(w, r, H)
 	})
 	fs := http.FileServer(http.Dir("static/"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
