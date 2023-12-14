@@ -23,11 +23,8 @@ func Home(w http.ResponseWriter, r *http.Request) {
 
 func Test(w http.ResponseWriter, r *http.Request, infos *Informations) {
 	infos.Email = r.FormValue("Text input")
-	template, err := template.ParseFiles("./pages/infos.html", "./templates/footer.html", "./templates/informations.html")
-	if err != nil {
-		log.Fatal(err)
-	}
-	template.Execute(w, infos)
+	fmt.Println(infos.Email)
+	http.Redirect(w, r, "http://localhost:8080/", http.StatusFound)
 }
 
 func Server() {
