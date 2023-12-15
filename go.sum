@@ -1,7 +1,9 @@
-github.com/MounKilian/hangman v0.0.0-20231212155024-a729a560bc54 h1:kKf8ZqgPK9EopVfQnyaKgpIylsR2t0bo2CkHM9RVpoY=
-github.com/MounKilian/hangman v0.0.0-20231212155024-a729a560bc54/go.mod h1:0SzvTXIaDhZ95qq7hX2xW+pVehQ1ykBDmTL3XflWvss=
-github.com/MounKilian/hangman v0.0.0-20231212172027-e1a67ee38edd h1:exryVQQ3AtMRCg+sCzb75HDu+bAdBIgyAE8hE1qkG4U=
-github.com/MounKilian/hangman v0.0.0-20231212172027-e1a67ee38edd/go.mod h1:0SzvTXIaDhZ95qq7hX2xW+pVehQ1ykBDmTL3XflWvss=
+github.com/MounKilian/hangman v0.0.0-20231214150726-b1e1ade3529b h1:enq/9G2L2MDQh3NlIOSZuen2a5srIM29lePZ+5wiNMU=
+github.com/MounKilian/hangman v0.0.0-20231214150726-b1e1ade3529b/go.mod h1:0SzvTXIaDhZ95qq7hX2xW+pVehQ1ykBDmTL3XflWvss=
+github.com/MounKilian/hangman v0.0.0-20231214153832-718e4b3435a7 h1:Ko0jhCJ1y+iAH+5OKrjU6Csi34f6UeyOo+wAs7l1oOE=
+github.com/MounKilian/hangman v0.0.0-20231214153832-718e4b3435a7/go.mod h1:0SzvTXIaDhZ95qq7hX2xW+pVehQ1ykBDmTL3XflWvss=
+github.com/MounKilian/hangman v0.0.0-20231214173211-6f1ad6d39c90 h1:DtokCfrAPZF4V1lDpWDiFM6ZUHCJrIQ0zailpXhct2Y=
+github.com/MounKilian/hangman v0.0.0-20231214173211-6f1ad6d39c90/go.mod h1:0SzvTXIaDhZ95qq7hX2xW+pVehQ1ykBDmTL3XflWvss=
 github.com/gdamore/encoding v1.0.0 h1:+7OoQ1Bc6eTm5niUzBa0Ctsh6JbMW6Ra+YNuAtDBdko=
 github.com/gdamore/encoding v1.0.0/go.mod h1:alR0ol34c49FCSBLjhosxzcPHQbf2trDkoo5dl+VrEg=
 github.com/gdamore/tcell/v2 v2.6.0 h1:OKbluoP9VYmJwZwq/iLb4BxwKcwGthaa1YNBJIyCySg=
