@@ -3,17 +3,16 @@
     <head>
         <title>Hangman Web</title>
         <meta charset="utf-8" />
+        <link rel="stylesheet" href="./static/style.css" />
     </head>
+    {{template "header"}}
     <body>
-        <p>Word to Reveal :</p>
         {{template "informations" .}}
         <form method="post" action="/hangman">
-            <label>TEXT INPUT:</label><br />
+            <label>Choix du mot :</label><br />
             <input type="text" name="Text input"><br />
-            <input type="submit">
+            <p></p>
+            <button class= "submitbutton" >SUBMIT</button>
         </form> 
     </body>
-
-{{template "footer"}}
-
 </html>

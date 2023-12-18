@@ -26,7 +26,7 @@ func Form(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
 	if H.Attempts <= 0 {
 		http.Redirect(w, r, "http://localhost:8080/loose", http.StatusFound)
 	}
-	template, err := template.ParseFiles("./index.html", "./templates/footer.html", "./templates/informations.html")
+	template, err := template.ParseFiles("./index.html", "./templates/header.html", "./templates/informations.html")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -38,8 +38,16 @@ func GameBack(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
 	http.Redirect(w, r, "http://localhost:8080/", http.StatusFound)
 }
 
+func Menu(w http.ResponseWriter, r *http.Request) {
+	template, err := template.ParseFiles("./pages/menu.html", "./templates/header.html")
+	if err != nil {
+		log.Fatal(err)
+	}
+	template.Execute(w, nil)
+}
+
 func Win(w http.ResponseWriter, r *http.Request) {
-	template, err := template.ParseFiles("./pages/win.html", "./templates/footer.html")
+	template, err := template.ParseFiles("./pages/win.html", "./templates/header.html")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -47,7 +55,7 @@ func Win(w http.ResponseWriter, r *http.Request) {
 }
 
 func Loose(w http.ResponseWriter, r *http.Request) {
-	template, err := template.ParseFiles("./pages/loose.html", "./templates/footer.html")
+	template, err := template.ParseFiles("./pages/loose.html", "./templates/header.html")
 	if err != nil {
 		log.Fatal(err)
 	}

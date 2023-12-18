@@ -7,8 +7,9 @@ import (
 )
 
 func Server() {
-	H := hangman.New("words.txt", "rien")
+	H := hangman.New("words.txt", "default")
 	hangman.FirstLetter(H)
+	http.HandleFunc("/menu", Menu)
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		Form(w, r, H)
 	})
