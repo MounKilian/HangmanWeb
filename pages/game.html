@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hangman Web</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="./static/style.css" />
+    </head>
+    {{template "header"}}
+    <body>
+        {{template "informations" .}}
+        <div class="hangman">
+            <p>uiozeafhmglk;ehzoligbhoelighlzeglezghlezkg</p>
+        </div>
+        <div class="input"> 
+            <h1>Input</h1>
+            <form method="post" action="/hangman">
+                <label>Choix du mot :</label><br />
+                <input type="text" name="Text input"><br />
+                <p></p>
+                <button class= "submitbutton" >SUBMIT</button>
+            </form> 
+        </div>
+    </body>
+</html>
