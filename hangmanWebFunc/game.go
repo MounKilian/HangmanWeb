@@ -14,17 +14,17 @@ func Form(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
 		if len(H.LetterInput) == 1 {
 			hangman.Verification(H)
 			if hangman.WordFind(H) {
-				http.Redirect(w, r, "http://localhost:8080/win", http.StatusFound)
+				http.Redirect(w, r, "/win", http.StatusFound)
 			}
 		} else if len(H.LetterInput) > 1 {
 			win := hangman.EnterWord(H)
 			if win {
-				http.Redirect(w, r, "http://localhost:8080/win", http.StatusFound)
+				http.Redirect(w, r, "/win", http.StatusFound)
 			}
 		}
 	}
 	if H.Attempts <= 0 {
-		http.Redirect(w, r, "http://localhost:8080/loose", http.StatusFound)
+		http.Redirect(w, r, "/loose", http.StatusFound)
 	}
 	template, err := template.ParseFiles("./pages/game.html", "./templates/header.html", "./templates/informations.html")
 	if err != nil {

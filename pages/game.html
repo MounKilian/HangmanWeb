@@ -6,18 +6,29 @@
         <link rel="stylesheet" href="./static/style.css" />
     </head>
     {{template "header"}}
-    <body>
+    <body> 
         {{template "informations" .}}
         <div class="hangman">
-            <p>uiozeafhmglk;ehzoligbhoelighlzeglezghlezkg</p>
+            <div class="bottom">-</div>
+            <div class="traitvertical">|</div>
+            <div class="traithorizontale">-</div>
+            <div class="startperso">|</div>
+            <div class="head">O</div>
+            <div class="corps">|</div>
+            <div class="brasgauche">\</div>
+            <div class="brasdroit">/</div>
+            <div class="jambegauche">/</div>
+            <div class="jambedroite">\</div>
         </div>
-        <div class="input"> 
-            <h1>Input</h1>
+        <div class="choose"> 
+            <h1 class="title">Input</h1>
             <form method="post" action="/hangman">
-                <label>Choix du mot :</label><br />
-                <input type="text" name="Text input"><br />
-                <p></p>
-                <button class= "submitbutton" >SUBMIT</button>
+                <input type="text" placeholder="Choose a word or a letter" name="Text input">
+                <br>
+                <button class="oauthButton">
+                    Continue
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 17 5-5-5-5"></path><path d="m13 17 5-5-5-5"></path></svg>
+                </button>
             </form> 
         </div>
     </body>
