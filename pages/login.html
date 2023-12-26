@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hangman Web</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="./static/style.css" />
+    </head>
+    {{template "header"}}
+    <body> 
+        <form method="post" action="/game">
+            <input type="text" placeholder="Choose a word or a letter" name="Text input">
+            <br>
+            <button class="oauthButton">
+                Submit
+            </button>
+        </form> 
+    </body>
+</html>
