@@ -67,6 +67,7 @@ h1.title{
 }
 
 .choose{
+    height: 190px;
     float:inline-end;
     background:linear-gradient(to right, rgb(254, 208, 161),rgb(245, 187, 130));
     border-bottom: 5px solid rgb(255, 154, 53);
@@ -79,7 +80,7 @@ h1.title{
 }
 
 .hangman{
-    height: 373px;
+    height: 442px;
     float: left;
     background:linear-gradient(to right, rgb(254, 208, 161),rgb(245, 187, 130));
     border-bottom: 5px solid rgb(255, 154, 53);
@@ -87,7 +88,104 @@ h1.title{
     border-left: 5px solid rgb(255, 154, 53);
     border-right: 5px solid rgb(255, 154, 53);
     text-align: center;
-    width: 48%;
+    width: 49%;
     margin-top : 3%;
 }
 
+.hangmanhead{
+    background:black;
+    border-radius:50%;
+    width:45px;
+    height:45px;
+    position: absolute;
+    top: 240px;
+    left: 180px;
+}
+
+.hangmanrope{
+    border-top: 2px solid #000;
+    width : 70px;
+    transform: rotate(90deg);
+    position: absolute;
+    top: 205px;
+    left: 168px;
+}
+
+.hangmanhorizontalwood{
+    border-top: 2px solid #000;
+    width : 200px;
+    position: absolute;
+    top: 170px;
+    left: 168px;
+}
+
+.hangmanverticalwood{
+    border-top: 2px solid #000;
+    width : 300px;
+    transform: rotate(90deg);
+    position: absolute;
+    top: 320px;
+    left: 217px;
+}
+
+.hangmanpillar{
+    border-top: 2px solid #000;
+    width : 30px;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 180px;
+    left: 342px;
+}
+
+.hangmanbegin{
+    border-top: 4px solid #000;
+    width : 120px;
+    position: absolute;
+    top: 470px;
+    left: 290px;
+}
+
+.hangmanbody{
+    border-top: 2px solid #000;
+    width : 100px;
+    position: absolute;
+    transform: rotate(90deg);
+    top: 330px;
+    left: 153px;
+}
+
+.hangmanleftarm{
+    border-top: 2px solid #000;
+    width : 60px;
+    position: absolute;
+    transform: rotate(45deg);
+    top: 300px;
+    left: 152px;
+}
+
+.hangmanrightarm{
+    border-top: 2px solid #000;
+    width : 60px;
+    position: absolute;
+    transform: rotate(-45deg);
+    top: 300px;
+    left: 194px;
+}
+
+.hangmanleftleg{
+    border-top: 2px solid #000;
+    width : 60px;
+    position: absolute;
+    transform: rotate(45deg);
+    top: 400px;
+    left: 194px;
+}
+
+.hangmanrightleg{
+    border-top: 2px solid #000;
+    width : 60px;
+    position: absolute;
+    transform: rotate(-45deg);
+    top: 400px;
+    left: 152px;
+}
