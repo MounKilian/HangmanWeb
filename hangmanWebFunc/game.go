@@ -69,3 +69,11 @@ func Loose(w http.ResponseWriter, r *http.Request) {
 	}
 	template.Execute(w, nil)
 }
+
+func Level(w http.ResponseWriter, r *http.Request) {
+	template, err := template.ParseFiles("./pages/level.html", "./templates/header.html")
+	if err != nil {
+		log.Fatal(err)
+	}
+	template.Execute(w, nil)
+}

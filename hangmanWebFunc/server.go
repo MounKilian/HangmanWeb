@@ -18,6 +18,7 @@ func Server() {
 	})
 	http.HandleFunc("/help", Help)
 	http.HandleFunc("/win", Win)
+	http.HandleFunc("/level", Level)
 	http.HandleFunc("/loose", Loose)
 	fs := http.FileServer(http.Dir("static/"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
