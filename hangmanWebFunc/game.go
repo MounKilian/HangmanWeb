@@ -77,3 +77,32 @@ func Level(w http.ResponseWriter, r *http.Request) {
 	}
 	template.Execute(w, nil)
 }
+
+func EasyGame(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
+	H.ToFind = hangman.RandomWord(string(("dic/words.txt")))
+	H.Word = hangman.RandomWordUnderscore(H.ToFind)
+	hangman.FirstLetter(H)
+	http.Redirect(w, r, "/login", http.StatusFound)
+}
+
+func MediumGame(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
+	H.ToFind = hangman.RandomWord(string(("dic/words2.txt")))
+	H.Word = hangman.RandomWordUnderscore(H.ToFind)
+	hangman.FirstLetter(H)
+	http.Redirect(w, r, "/login", http.StatusFound)
+}
+
+func HardGame(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
+	H.ToFind = hangman.RandomWord(string(("dic/words3.txt")))
+	H.Word = hangman.RandomWordUnderscore(H.ToFind)
+	hangman.FirstLetter(H)
+	http.Redirect(w, r, "/login", http.StatusFound)
+}
+
+func Login(w http.ResponseWriter, r *http.Request) {
+	template, err := template.ParseFiles("./pages/login.html", "./templates/header.html")
+	if err != nil {
+		log.Fatal(err)
+	}
+	template.Execute(w, nil)
+}
