@@ -81,22 +81,31 @@ func Level(w http.ResponseWriter, r *http.Request) {
 func EasyGame(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
 	H.ToFind = hangman.RandomWord(string(("dic/words.txt")))
 	H.Word = hangman.RandomWordUnderscore(H.ToFind)
+	H.Letters = ""
+	H.LetterInput = ""
+	H.Attempts = 10
 	hangman.FirstLetter(H)
-	http.Redirect(w, r, "/login", http.StatusFound)
+	http.Redirect(w, r, "/game", http.StatusFound)
 }
 
 func MediumGame(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
 	H.ToFind = hangman.RandomWord(string(("dic/words2.txt")))
 	H.Word = hangman.RandomWordUnderscore(H.ToFind)
+	H.Letters = ""
+	H.LetterInput = ""
+	H.Attempts = 10
 	hangman.FirstLetter(H)
-	http.Redirect(w, r, "/login", http.StatusFound)
+	http.Redirect(w, r, "/game", http.StatusFound)
 }
 
 func HardGame(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
 	H.ToFind = hangman.RandomWord(string(("dic/words3.txt")))
 	H.Word = hangman.RandomWordUnderscore(H.ToFind)
+	H.Letters = ""
+	H.LetterInput = ""
+	H.Attempts = 10
 	hangman.FirstLetter(H)
-	http.Redirect(w, r, "/login", http.StatusFound)
+	http.Redirect(w, r, "/game", http.StatusFound)
 }
 
 func Login(w http.ResponseWriter, r *http.Request) {
