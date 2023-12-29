@@ -18,7 +18,9 @@ func Server() {
 	http.HandleFunc("/help", Help)
 	http.HandleFunc("/win", Win)
 	http.HandleFunc("/level", Level)
-	http.HandleFunc("/loose", Loose)
+	http.HandleFunc("/loose", func(w http.ResponseWriter, r *http.Request) {
+		Loose(w, r, H)
+	})
 	http.HandleFunc("/easygame", func(w http.ResponseWriter, r *http.Request) {
 		EasyGame(w, r, H)
 	})

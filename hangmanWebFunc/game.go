@@ -26,7 +26,7 @@ func Form(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
 	if H.Attempts <= 0 {
 		http.Redirect(w, r, "/loose", http.StatusFound)
 	}
-	template, err := template.ParseFiles("./pages/game.html", "./templates/header.html", "./templates/informations.html")
+	template, err := template.ParseFiles("./pages/game.html", "./templates/informations.html")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -62,12 +62,12 @@ func Win(w http.ResponseWriter, r *http.Request) {
 	template.Execute(w, nil)
 }
 
-func Loose(w http.ResponseWriter, r *http.Request) {
+func Loose(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
 	template, err := template.ParseFiles("./pages/loose.html", "./templates/header.html")
 	if err != nil {
 		log.Fatal(err)
 	}
-	template.Execute(w, nil)
+	template.Execute(w, H)
 }
 
 func Level(w http.ResponseWriter, r *http.Request) {
@@ -79,9 +79,9 @@ func Level(w http.ResponseWriter, r *http.Request) {
 }
 
 func EasyGame(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
-	H.ToFind = hangman.RandomWord(string(("dic/words.txt")))
+	H.WordFile = "words.txt"
+	H.ToFind = hangman.RandomWord(string(("dic/" + H.WordFile)))
 	H.Word = hangman.RandomWordUnderscore(H.ToFind)
-	H.Letters = ""
 	H.LetterInput = ""
 	H.Attempts = 10
 	hangman.FirstLetter(H)
@@ -89,9 +89,9 @@ func EasyGame(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
 }
 
 func MediumGame(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
-	H.ToFind = hangman.RandomWord(string(("dic/words2.txt")))
+	H.WordFile = "words2.txt"
+	H.ToFind = hangman.RandomWord(string(("dic/" + H.WordFile)))
 	H.Word = hangman.RandomWordUnderscore(H.ToFind)
-	H.Letters = ""
 	H.LetterInput = ""
 	H.Attempts = 10
 	hangman.FirstLetter(H)
@@ -99,9 +99,9 @@ func MediumGame(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) 
 }
 
 func HardGame(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
-	H.ToFind = hangman.RandomWord(string(("dic/words3.txt")))
+	H.WordFile = "words3.txt"
+	H.ToFind = hangman.RandomWord(string(("dic/" + H.WordFile)))
 	H.Word = hangman.RandomWordUnderscore(H.ToFind)
-	H.Letters = ""
 	H.LetterInput = ""
 	H.Attempts = 10
 	hangman.FirstLetter(H)
