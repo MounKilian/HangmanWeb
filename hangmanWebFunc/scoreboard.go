@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"sort"
 	"strconv"
 
 	"github.com/MounKilian/hangman"
@@ -49,6 +50,10 @@ func Update(H *hangman.HangManData) {
 			record[1] = strconv.Itoa(H.Point)
 		}
 	}
+
+	sort.Slice(H.Scoreboard, func(i, j int) bool {
+		return H.Scoreboard[i][1] > H.Scoreboard[j][1]
+	})
 
 	file, err := os.Create("data.csv")
 	if err != nil {

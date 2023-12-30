@@ -12,18 +12,12 @@ func InitGame(H *hangman.HangManData) {
 		H.NewScore = []string{H.Username, strconv.Itoa(H.Point), H.Level}
 		Write(H)
 		Read(H)
-		H.ToFind = hangman.RandomWord(string(("dic/" + H.WordFile)))
-		H.Word = hangman.RandomWordUnderscore(H.ToFind)
-		H.LetterInput = ""
-		H.Attempts = 10
-		hangman.FirstLetter(H)
-	} else {
-		H.ToFind = hangman.RandomWord(string(("dic/" + H.WordFile)))
-		H.Word = hangman.RandomWordUnderscore(H.ToFind)
-		H.LetterInput = ""
-		H.Attempts = 10
-		hangman.FirstLetter(H)
 	}
+	H.ToFind = hangman.RandomWord(string(("dic/" + H.WordFile)))
+	H.Word = hangman.RandomWordUnderscore(H.ToFind)
+	H.LetterInput = ""
+	H.Attempts = 10
+	hangman.FirstLetter(H)
 }
 
 func GameLoop(H *hangman.HangManData) int {
