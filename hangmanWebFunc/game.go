@@ -10,11 +10,14 @@ import (
 
 func Form(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
 	if GameLoop(H) == 1 {
+		H.Point += 1
+		Update(H)
+		Read(H)
 		http.Redirect(w, r, "/win", http.StatusFound)
-	} else if GameLoop(H) == 2 {
+	} else if GameLoop(H) == 0 {
 		http.Redirect(w, r, "/loose", http.StatusFound)
 	}
-	template, err := template.ParseFiles("./pages/game.html", "./templates/informations.html")
+	template, err := template.ParseFiles("./pages/game.html", "./templates/informations.html", "./templates/stickman.html")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -68,21 +71,18 @@ func Level(w http.ResponseWriter, r *http.Request) {
 
 func EasyGame(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
 	H.WordFile = "words.txt"
-	H.Level = "easy"
 	InitGame(H)
 	http.Redirect(w, r, "/game", http.StatusFound)
 }
 
 func MediumGame(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
 	H.WordFile = "words2.txt"
-	H.Level = "medium"
 	InitGame(H)
 	http.Redirect(w, r, "/game", http.StatusFound)
 }
 
 func HardGame(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
 	H.WordFile = "words3.txt"
-	H.Level = "hard"
 	InitGame(H)
 	http.Redirect(w, r, "/game", http.StatusFound)
 }
@@ -105,5 +105,6 @@ func Scoreboard(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) 
 
 func Username(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
 	H.Username = r.FormValue("User")
+	H.Point = 0
 	http.Redirect(w, r, "/level", http.StatusFound)
 }

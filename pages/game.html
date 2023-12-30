@@ -7,70 +7,7 @@
     </head>
     <body> 
         {{template "informations" .}}
-        <div class="hangman">
-                {{if eq .Attempts 9}}
-                    <div class="hangmanbegin"></div>
-                {{else if eq .Attempts 8}}
-                    <div class="hangmanbegin"></div>
-                    <div class="hangmanverticalwood"></div>
-                {{else if eq .Attempts 7}}
-                    <div class="hangmanbegin"></div>
-                    <div class="hangmanpillar"></div>
-                    <div class="hangmanverticalwood"></div>
-                    <div class="hangmanhorizontalwood"></div>
-                {{else if eq .Attempts 6}}
-                    <div class="hangmanbegin"></div>
-                    <div class="hangmanpillar"></div>
-                    <div class="hangmanverticalwood"></div>
-                    <div class="hangmanhorizontalwood"></div>
-                    <div class="hangmanrope"></div>
-                {{else if eq .Attempts 5}}
-                    <div class="hangmanbegin"></div>
-                    <div class="hangmanpillar"></div>
-                    <div class="hangmanverticalwood"></div>
-                    <div class="hangmanhorizontalwood"></div>
-                    <div class="hangmanrope"></div>
-                    <div class="hangmanhead"></div>
-                {{else if eq .Attempts 4}}
-                    <div class="hangmanhead"></div>
-                    <div class="hangmanrope"></div>
-                    <div class="hangmanhorizontalwood"></div>
-                    <div class="hangmanverticalwood"></div>
-                    <div class="hangmanpillar"></div>
-                    <div class="hangmanbegin"></div>
-                    <div class="hangmanbody"></div>
-                {{else if eq .Attempts 3}}
-                    <div class="hangmanhead"></div>
-                    <div class="hangmanrope"></div>
-                    <div class="hangmanhorizontalwood"></div>
-                    <div class="hangmanverticalwood"></div>
-                    <div class="hangmanpillar"></div>
-                    <div class="hangmanbegin"></div>
-                    <div class="hangmanbody"></div>
-                    <div class="hangmanleftarm"></div>
-                {{else if eq .Attempts 2}}
-                    <div class="hangmanhead"></div>
-                    <div class="hangmanrope"></div>
-                    <div class="hangmanhorizontalwood"></div>
-                    <div class="hangmanverticalwood"></div>
-                    <div class="hangmanpillar"></div>
-                    <div class="hangmanbegin"></div>
-                    <div class="hangmanbody"></div>
-                    <div class="hangmanleftarm"></div>
-                    <div class="hangmanrightarm"></div>
-                {{else if eq .Attempts 1}}
-                    <div class="hangmanhead"></div>
-                    <div class="hangmanrope"></div>
-                    <div class="hangmanhorizontalwood"></div>
-                    <div class="hangmanverticalwood"></div>
-                    <div class="hangmanpillar"></div>
-                    <div class="hangmanbegin"></div>
-                    <div class="hangmanbody"></div>
-                    <div class="hangmanleftarm"></div>
-                    <div class="hangmanrightarm"></div>
-                    <div class="hangmanleftleg"></div>
-           {{end}}
-        </div>
+        {{template "stickman" .}}
         <div class="choose"> 
             <h1 class="title">Input</h1>
             <form method="post" action="/hangman">

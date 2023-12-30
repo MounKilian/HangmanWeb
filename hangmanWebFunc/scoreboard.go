@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strconv"
 
 	"github.com/MounKilian/hangman"
 )
@@ -40,4 +41,24 @@ func Write(H *hangman.HangManData) {
 
 	writer.WriteAll(H.Scoreboard)
 	writer.Write(H.NewScore)
+}
+
+func Update(H *hangman.HangManData) {
+	for _, record := range H.Scoreboard {
+		if record[0] == H.NewScore[0] && record[2] == H.NewScore[2] {
+			record[1] = strconv.Itoa(H.Point)
+		}
+	}
+
+	file, err := os.Create("data.csv")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer file.Close()
+
+	writer := csv.NewWriter(file)
+
+	defer writer.Flush()
+
+	writer.WriteAll(H.Scoreboard)
 }
