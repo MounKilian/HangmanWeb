@@ -99,7 +99,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 func Scoreboard(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
 	Read(H)
 	Refresh(H)
-	template, err := template.ParseFiles("./pages/scoreboard.html", "./templates/header.html")
+	template, err := template.ParseFiles("./pages/scoreboard.html", "./templates/ranking.html", "./templates/header.html")
 	if err != nil {
 		log.Fatal(err)
 	}
