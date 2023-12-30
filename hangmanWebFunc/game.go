@@ -47,7 +47,7 @@ func Help(w http.ResponseWriter, r *http.Request) {
 }
 
 func Win(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
-	template, err := template.ParseFiles("./pages/win.html", "./templates/header.html")
+	template, err := template.ParseFiles("./pages/win.html", "./templates/ranking.html", "./templates/header.html")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -55,7 +55,7 @@ func Win(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
 }
 
 func Loose(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
-	template, err := template.ParseFiles("./pages/loose.html", "./templates/header.html")
+	template, err := template.ParseFiles("./pages/loose.html", "./templates/ranking.html", "./templates/header.html")
 	if err != nil {
 		log.Fatal(err)
 	}
