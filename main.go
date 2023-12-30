@@ -2,6 +2,6 @@ package main
 
 import hangmanWeb "hangmanWeb/hangmanWebFunc"
 
-func main(){
+func main() {
 	hangmanWeb.Server()
 }

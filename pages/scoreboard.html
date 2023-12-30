@@ -10,14 +10,22 @@
         <table>
             <thead>
               <tr>
-                <th colspan="2">The table header</th>
+                <th colspan="3">Scoreboard</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>UserName</td>
                 <td>Point</td>
+                <td>Level</td>
               </tr>
+              {{range .Scoreboard}}
+					<tr>
+						{{range .}}
+							<td>{{.}}</td>
+						{{end}}
+					</tr>
+				{{end}}
             </tbody>
         </table>
     </body>

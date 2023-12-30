@@ -8,6 +8,7 @@ import (
 
 func Server() {
 	H := hangman.New("words.txt", "default")
+	Read(H)
 	http.HandleFunc("/game", func(w http.ResponseWriter, r *http.Request) {
 		Form(w, r, H)
 	})
@@ -16,7 +17,9 @@ func Server() {
 		GameBack(w, r, H)
 	})
 	http.HandleFunc("/help", Help)
-	http.HandleFunc("/win", Win)
+	http.HandleFunc("/win", func(w http.ResponseWriter, r *http.Request) {
+		Win(w, r, H)
+	})
 	http.HandleFunc("/level", Level)
 	http.HandleFunc("/loose", func(w http.ResponseWriter, r *http.Request) {
 		Loose(w, r, H)
@@ -31,6 +34,12 @@ func Server() {
 		HardGame(w, r, H)
 	})
 	http.HandleFunc("/login", Login)
+	http.HandleFunc("/username", func(w http.ResponseWriter, r *http.Request) {
+		Username(w, r, H)
+	})
+	http.HandleFunc("/scoreboard", func(w http.ResponseWriter, r *http.Request) {
+		Scoreboard(w, r, H)
+	})
 	fs := http.FileServer(http.Dir("static/"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 	http.ListenAndServe(":8080", nil)

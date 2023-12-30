@@ -9,21 +9,9 @@ import (
 )
 
 func Form(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
-	if !hangman.VerifIfAlreadyUse(H) && (H.LetterInput >= "a" && H.LetterInput <= "z") {
-		H.Letters += H.LetterInput + " | "
-		if len(H.LetterInput) == 1 {
-			hangman.Verification(H)
-			if hangman.WordFind(H) {
-				http.Redirect(w, r, "/win", http.StatusFound)
-			}
-		} else if len(H.LetterInput) > 1 {
-			win := hangman.EnterWord(H)
-			if win {
-				http.Redirect(w, r, "/win", http.StatusFound)
-			}
-		}
-	}
-	if H.Attempts <= 0 {
+	if GameLoop(H) == 1 {
+		http.Redirect(w, r, "/win", http.StatusFound)
+	} else if GameLoop(H) == 2 {
 		http.Redirect(w, r, "/loose", http.StatusFound)
 	}
 	template, err := template.ParseFiles("./pages/game.html", "./templates/informations.html")
@@ -54,12 +42,12 @@ func Help(w http.ResponseWriter, r *http.Request) {
 	template.Execute(w, nil)
 }
 
-func Win(w http.ResponseWriter, r *http.Request) {
+func Win(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
 	template, err := template.ParseFiles("./pages/win.html", "./templates/header.html")
 	if err != nil {
 		log.Fatal(err)
 	}
-	template.Execute(w, nil)
+	template.Execute(w, H)
 }
 
 func Loose(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
@@ -80,31 +68,22 @@ func Level(w http.ResponseWriter, r *http.Request) {
 
 func EasyGame(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
 	H.WordFile = "words.txt"
-	H.ToFind = hangman.RandomWord(string(("dic/" + H.WordFile)))
-	H.Word = hangman.RandomWordUnderscore(H.ToFind)
-	H.LetterInput = ""
-	H.Attempts = 10
-	hangman.FirstLetter(H)
+	H.Level = "easy"
+	InitGame(H)
 	http.Redirect(w, r, "/game", http.StatusFound)
 }
 
 func MediumGame(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
 	H.WordFile = "words2.txt"
-	H.ToFind = hangman.RandomWord(string(("dic/" + H.WordFile)))
-	H.Word = hangman.RandomWordUnderscore(H.ToFind)
-	H.LetterInput = ""
-	H.Attempts = 10
-	hangman.FirstLetter(H)
+	H.Level = "medium"
+	InitGame(H)
 	http.Redirect(w, r, "/game", http.StatusFound)
 }
 
 func HardGame(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
 	H.WordFile = "words3.txt"
-	H.ToFind = hangman.RandomWord(string(("dic/" + H.WordFile)))
-	H.Word = hangman.RandomWordUnderscore(H.ToFind)
-	H.LetterInput = ""
-	H.Attempts = 10
-	hangman.FirstLetter(H)
+	H.Level = "hard"
+	InitGame(H)
 	http.Redirect(w, r, "/game", http.StatusFound)
 }
 
@@ -114,4 +93,17 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		log.Fatal(err)
 	}
 	template.Execute(w, nil)
+}
+
+func Scoreboard(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
+	template, err := template.ParseFiles("./pages/scoreboard.html", "./templates/header.html")
+	if err != nil {
+		log.Fatal(err)
+	}
+	template.Execute(w, H)
+}
+
+func Username(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
+	H.Username = r.FormValue("User")
+	http.Redirect(w, r, "/level", http.StatusFound)
 }

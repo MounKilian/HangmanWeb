@@ -8,6 +8,12 @@
     <body>
         {{template "header"}}
         <p>WIN !</p>
-        <button><a href="/level">RESTART</a></button>
+        {{if eq .WordFile "words.txt"}}
+            <button><a href="/easygame">RESTART</a></button>
+        {{else if eq .WordFile "words2.txt"}}
+            <button><a href="/mediumgame">RESTART</a></button>
+        {{else if eq .WordFile "words3.txt"}}
+            <button><a href="/hardgame">RESTART</a></button>
+        {{end}}
     </body>
 </html>
