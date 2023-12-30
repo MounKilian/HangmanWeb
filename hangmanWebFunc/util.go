@@ -12,6 +12,7 @@ func InitGame(H *hangman.HangManData) {
 		H.NewScore = []string{H.Username, strconv.Itoa(H.Point), H.Level}
 		Write(H)
 		Read(H)
+		Refresh(H)
 	}
 	H.ToFind = hangman.RandomWord(string(("dic/" + H.WordFile)))
 	H.Word = hangman.RandomWordUnderscore(H.ToFind)

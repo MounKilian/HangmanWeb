@@ -2,7 +2,6 @@ package hangmanWeb
 
 import (
 	"encoding/csv"
-	"fmt"
 	"log"
 	"os"
 	"sort"
@@ -23,7 +22,7 @@ func Read(H *hangman.HangManData) {
 	records, err := reader.ReadAll()
 
 	if err != nil {
-		fmt.Println("Error reading records")
+		log.Fatal(err)
 	}
 
 	H.Scoreboard = records
@@ -51,8 +50,29 @@ func Update(H *hangman.HangManData) {
 		}
 	}
 
+	file, err := os.Create("data.csv")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer file.Close()
+
+	writer := csv.NewWriter(file)
+
+	defer writer.Flush()
+
+	writer.WriteAll(H.Scoreboard)
+}
+
+func Refresh(H *hangman.HangManData) {
 	sort.Slice(H.Scoreboard, func(i, j int) bool {
-		return H.Scoreboard[i][1] > H.Scoreboard[j][1]
+		value1, err1 := strconv.Atoi(H.Scoreboard[i][1])
+		value2, err2 := strconv.Atoi(H.Scoreboard[j][1])
+
+		if err1 != nil || err2 != nil {
+			log.Fatal(err1, err2)
+		}
+
+		return value1 > value2
 	})
 
 	file, err := os.Create("data.csv")

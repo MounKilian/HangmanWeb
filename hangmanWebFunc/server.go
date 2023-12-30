@@ -9,6 +9,7 @@ import (
 func Server() {
 	H := hangman.New("words.txt", "default")
 	Read(H)
+	Refresh(H)
 	http.HandleFunc("/game", func(w http.ResponseWriter, r *http.Request) {
 		Form(w, r, H)
 	})
