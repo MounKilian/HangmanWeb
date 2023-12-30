@@ -85,5 +85,9 @@ func Refresh(H *hangman.HangManData) {
 
 	defer writer.Flush()
 
-	writer.WriteAll(H.Scoreboard)
+	for index, record := range H.Scoreboard {
+		if index < 10 {
+			writer.Write(record)
+		}
+	}
 }

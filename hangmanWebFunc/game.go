@@ -13,6 +13,7 @@ func Form(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
 		H.Point += 1
 		Update(H)
 		Read(H)
+		Refresh(H)
 		http.Redirect(w, r, "/win", http.StatusFound)
 	} else if GameLoop(H) == 0 {
 		http.Redirect(w, r, "/loose", http.StatusFound)
@@ -96,6 +97,8 @@ func Login(w http.ResponseWriter, r *http.Request) {
 }
 
 func Scoreboard(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
+	Read(H)
+	Refresh(H)
 	template, err := template.ParseFiles("./pages/scoreboard.html", "./templates/header.html")
 	if err != nil {
 		log.Fatal(err)
