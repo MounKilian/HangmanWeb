@@ -9,24 +9,16 @@ import (
 )
 
 func Form(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
-	if !hangman.VerifIfAlreadyUse(H) && (H.LetterInput >= "a" && H.LetterInput <= "z") {
-		H.Letters += H.LetterInput + " | "
-		if len(H.LetterInput) == 1 {
-			hangman.Verification(H)
-			if hangman.WordFind(H) {
-				http.Redirect(w, r, "/win", http.StatusFound)
-			}
-		} else if len(H.LetterInput) > 1 {
-			win := hangman.EnterWord(H)
-			if win {
-				http.Redirect(w, r, "/win", http.StatusFound)
-			}
-		}
-	}
-	if H.Attempts <= 0 {
+	if GameLoop(H) == 1 {
+		H.Point += 1
+		Update(H)
+		Read(H)
+		Refresh(H)
+		http.Redirect(w, r, "/win", http.StatusFound)
+	} else if GameLoop(H) == 0 {
 		http.Redirect(w, r, "/loose", http.StatusFound)
 	}
-	template, err := template.ParseFiles("./pages/game.html", "./templates/header.html", "./templates/informations.html")
+	template, err := template.ParseFiles("./pages/game.html", "./templates/informations.html", "./templates/stickman.html")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -54,20 +46,20 @@ func Help(w http.ResponseWriter, r *http.Request) {
 	template.Execute(w, nil)
 }
 
-func Win(w http.ResponseWriter, r *http.Request) {
-	template, err := template.ParseFiles("./pages/win.html", "./templates/header.html")
+func Win(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
+	template, err := template.ParseFiles("./pages/win.html", "./templates/ranking.html", "./templates/header.html")
 	if err != nil {
 		log.Fatal(err)
 	}
-	template.Execute(w, nil)
+	template.Execute(w, H)
 }
 
-func Loose(w http.ResponseWriter, r *http.Request) {
-	template, err := template.ParseFiles("./pages/loose.html", "./templates/header.html")
+func Loose(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
+	template, err := template.ParseFiles("./pages/loose.html", "./templates/ranking.html", "./templates/header.html")
 	if err != nil {
 		log.Fatal(err)
 	}
-	template.Execute(w, nil)
+	template.Execute(w, H)
 }
 
 func Level(w http.ResponseWriter, r *http.Request) {
@@ -76,4 +68,46 @@ func Level(w http.ResponseWriter, r *http.Request) {
 		log.Fatal(err)
 	}
 	template.Execute(w, nil)
+}
+
+func EasyGame(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
+	H.WordFile = "words.txt"
+	InitGame(H)
+	http.Redirect(w, r, "/game", http.StatusFound)
+}
+
+func MediumGame(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
+	H.WordFile = "words2.txt"
+	InitGame(H)
+	http.Redirect(w, r, "/game", http.StatusFound)
+}
+
+func HardGame(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
+	H.WordFile = "words3.txt"
+	InitGame(H)
+	http.Redirect(w, r, "/game", http.StatusFound)
+}
+
+func Login(w http.ResponseWriter, r *http.Request) {
+	template, err := template.ParseFiles("./pages/login.html", "./templates/header.html")
+	if err != nil {
+		log.Fatal(err)
+	}
+	template.Execute(w, nil)
+}
+
+func Scoreboard(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
+	Read(H)
+	Refresh(H)
+	template, err := template.ParseFiles("./pages/scoreboard.html", "./templates/ranking.html", "./templates/header.html")
+	if err != nil {
+		log.Fatal(err)
+	}
+	template.Execute(w, H)
+}
+
+func Username(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
+	H.Username = r.FormValue("User")
+	H.Point = 0
+	http.Redirect(w, r, "/level", http.StatusFound)
 }

@@ -7,6 +7,10 @@
     </head>
     <body>
         {{template "header"}}
-        <p>LOOSE !</p>
+        <p>LOOSE !</p><br>
+        <p>The word was {{.ToFind}} !</p>
+        {{template "ranking" .}}
+        <p> Congratulation {{.Username}} ! Your score in {{.Level}} level is {{.Point}} pts</p>
+        <button><a href="/login">RESTART</a></button>
     </body>
 </html>

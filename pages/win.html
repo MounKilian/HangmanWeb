@@ -8,5 +8,15 @@
     <body>
         {{template "header"}}
         <p>WIN !</p>
+        <p>The word was {{.ToFind}} !</p>
+        {{template "ranking" .}}
+        <p> Congratulation {{.Username}} ! Your score in {{.Level}} level is {{.Point}} pts</p>
+        {{if eq .WordFile "words.txt"}}
+            <button><a href="/easygame">RESTART</a></button>
+        {{else if eq .WordFile "words2.txt"}}
+            <button><a href="/mediumgame">RESTART</a></button>
+        {{else if eq .WordFile "words3.txt"}}
+            <button><a href="/hardgame">RESTART</a></button>
+        {{end}}
     </body>
 </html>
