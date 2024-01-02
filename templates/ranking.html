@@ -6,14 +6,14 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
+      <tr class="tablehead">
         <td>UserName</td>
         <td>Point</td>
         <td>Level</td>
       </tr>
       {{range .Scoreboard}}
             <tr>
-                {{range . }}
+                {{range .}}
                     <td>{{.}}</td>
                 {{end}}
             </tr>

@@ -7,11 +7,12 @@
     </head>
     {{template "header"}}
     <body> 
-        <form method="post" action="/username">
-            <input required type="text" placeholder="What's your username ?" name="User">
+        <form class="username" method="post" action="/username">
+            <h4>What is your username ?</h4>
+            <input class="input" required type="text" name="User">
             <br>
-            <button class="oauthButton">
-                Submit
+            <button class="buttonusername">
+                Start
             </button>
         </form> 
     </body>
