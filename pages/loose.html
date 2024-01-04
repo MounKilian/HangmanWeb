@@ -7,10 +7,16 @@
     </head>
     <body>
         {{template "header"}}
-        <p>LOOSE !</p><br>
+        <p class="title">LOOSE !</p><br>
         <p>The word was {{.ToFind}} !</p>
         {{template "ranking" .}}
         <p> Congratulation {{.Username}} ! Your score in {{.Level}} level is {{.Point}} pts</p>
-        <button><a href="/login">RESTART</a></button>
+        {{if eq .WordFile "words.txt"}}
+            <button class="restart"><a href="/easygame">RESTART</a></button>
+        {{else if eq .WordFile "words2.txt"}}
+            <button class="restart"><a href="/mediumgame">RESTART</a></button>
+        {{else if eq .WordFile "words3.txt"}}
+            <button class="restart"><a href="/hardgame">RESTART</a></button>
+        {{end}}
     </body>
 </html>
