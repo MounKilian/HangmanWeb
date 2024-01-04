@@ -10,7 +10,7 @@ nav {
 	margin:-10px auto;
     width: 100%;
     height: 80px;
-    background: #414142; 
+    background: linear-gradient(to top, rgb(192, 145, 59),rgb(166, 106, 33)); 
 }	
  
 nav .head {
@@ -55,6 +55,7 @@ h1.title{
 }
 
 .informations{
+    height: 280px;
     float: right;
     background:linear-gradient(to right, rgb(254, 208, 161),rgb(245, 187, 130));
     border-bottom: 5px solid rgb(255, 154, 53);
@@ -63,11 +64,11 @@ h1.title{
     border-right: 5px solid rgb(255, 154, 53);
     text-align: center;
     width: 48%;
-    margin-top : 3%; 
+    margin-top: 1%;
 }
 
 .choose{
-    height: 190px;
+    height: 220px;
     float:inline-end;
     background:linear-gradient(to right, rgb(254, 208, 161),rgb(245, 187, 130));
     border-bottom: 5px solid rgb(255, 154, 53);
@@ -80,7 +81,7 @@ h1.title{
 }
 
 .hangman{
-    height: 442px;
+    height: 520px;
     float: left;
     background:linear-gradient(to right, rgb(254, 208, 161),rgb(245, 187, 130));
     border-bottom: 5px solid rgb(255, 154, 53);
@@ -89,7 +90,7 @@ h1.title{
     border-right: 5px solid rgb(255, 154, 53);
     text-align: center;
     width: 49%;
-    margin-top : 3%;
+    margin-top : 1%;
 }
 
 .hangmanhead{
@@ -191,6 +192,7 @@ h1.title{
 }
 
 .red{
+    margin-top: 10%;
     color: red;
     font-weight: bolder ;
 }
@@ -330,8 +332,35 @@ button a{
 }
 
 table{
-    border: 2px solid black;
+    border: 2px solid darkorange;
     width: 90%;
     margin:auto;
     margin-top: 5%;
+    background-color: rgb(245, 187, 130);
+    border-radius: 5px;
+}
+
+.titlerank{
+    border-bottom: 2px solid darkorange;
+    font-size: 200%; 
+    font-family: 'Rubik Doodle Shadow';
+    padding: 10px;
+}
+
+tr.scoreboard{
+    background : darkorange;
+}
+
+.rank{
+    text-align: center;
+    font-family: 'Rubik Doodle Shadow';
+    font-weight: bolder;
+}
+
+.stats{
+    text-align: center;
+    padding:4px;
+    border-bottom: 2px solid darkorange;
+    border-top: 2px solid darkorange;
+    font-weight: 500;
 }

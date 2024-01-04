@@ -10,7 +10,13 @@ import (
 
 func Form(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
 	if GameLoop(H) == 1 {
-		H.Point += 1
+		if H.Level == "easy" {
+			H.Point += 1 * H.Attempts
+		} else if H.Level == "medium" {
+			H.Point += 2 * H.Attempts
+		} else {
+			H.Point += 3 * H.Attempts
+		}
 		Update(H)
 		Read(H)
 		Refresh(H)
