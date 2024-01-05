@@ -10,12 +10,25 @@ import (
 
 func Form(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
 	if GameLoop(H) == 1 {
-		H.Point += 1
+		if H.Level == "easy" {
+			H.Point += 1 * H.Attempts
+			H.Win += 1
+		} else if H.Level == "medium" {
+			H.Point += 2 * H.Attempts
+			H.Win += 1
+		} else {
+			H.Point += 3 * H.Attempts
+			H.Win += 1
+		}
 		Update(H)
 		Read(H)
 		Refresh(H)
 		http.Redirect(w, r, "/win", http.StatusFound)
 	} else if GameLoop(H) == 0 {
+		H.Loose += 1
+		Update(H)
+		Read(H)
+		Refresh(H)
 		http.Redirect(w, r, "/loose", http.StatusFound)
 	}
 	template, err := template.ParseFiles("./pages/game.html", "./templates/informations.html", "./templates/stickman.html")

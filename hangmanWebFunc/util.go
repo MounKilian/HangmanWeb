@@ -8,8 +8,10 @@ import (
 
 func InitGame(H *hangman.HangManData) {
 	if H.Point == 0 {
+		H.Loose = 0
+		H.Win = 0
 		DetectLevel(H)
-		H.NewScore = []string{H.Username, strconv.Itoa(H.Point), H.Level}
+		H.NewScore = []string{H.Username, strconv.Itoa(H.Point), H.Level, strconv.Itoa(H.Win), strconv.Itoa(H.Loose)}
 		Write(H)
 		Read(H)
 		Refresh(H)

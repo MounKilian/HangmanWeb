@@ -47,6 +47,8 @@ func Update(H *hangman.HangManData) {
 	for _, record := range H.Scoreboard {
 		if record[0] == H.NewScore[0] && record[2] == H.NewScore[2] {
 			record[1] = strconv.Itoa(H.Point)
+			record[4] = strconv.Itoa(H.Loose)
+			record[3] = strconv.Itoa(H.Win)
 		}
 	}
 
