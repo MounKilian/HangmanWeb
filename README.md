@@ -2,6 +2,8 @@
 
 Welcome to HangmanWeb ! This project is based on the famous HangMan Game
 
+<img src="imgREADME/img.png" width="800" />
+
 # Prerequisite :rewind:
 
 Somes knowledges in this field : 
