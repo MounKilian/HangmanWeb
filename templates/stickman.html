@@ -1,5 +1,6 @@
 {{define "stickman"}}
 <div class="hangman">
+    <h1 class="title">Hangman</h1>
     {{if eq .Attempts 9}}
         <div class="hangmanbegin"></div>
     {{else if eq .Attempts 8}}
@@ -23,6 +24,9 @@
         <div class="hangmanhorizontalwood"></div>
         <div class="hangmanrope"></div>
         <div class="hangmanhead"></div>
+        <img class= "hangmancrossleft" src= "/static/red_cross.png" />
+        <img class= "hangmancrossright" src= "/static/red_cross.png" />
+        <img class= "hangmantongue" src= "/static/tongue.png" />
     {{else if eq .Attempts 4}}
         <div class="hangmanhead"></div>
         <div class="hangmanrope"></div>
@@ -31,6 +35,9 @@
         <div class="hangmanpillar"></div>
         <div class="hangmanbegin"></div>
         <div class="hangmanbody"></div>
+        <img class= "hangmancrossleft" src= "/static/red_cross.png" />
+        <img class= "hangmancrossright" src= "/static/red_cross.png" />
+        <img class= "hangmantongue" src= "/static/tongue.png" />
     {{else if eq .Attempts 3}}
         <div class="hangmanhead"></div>
         <div class="hangmanrope"></div>
@@ -40,6 +47,9 @@
         <div class="hangmanbegin"></div>
         <div class="hangmanbody"></div>
         <div class="hangmanleftarm"></div>
+        <img class= "hangmancrossleft" src= "/static/red_cross.png" />
+        <img class= "hangmancrossright" src= "/static/red_cross.png" />
+        <img class= "hangmantongue" src= "/static/tongue.png" />
     {{else if eq .Attempts 2}}
         <div class="hangmanhead"></div>
         <div class="hangmanrope"></div>
@@ -50,6 +60,9 @@
         <div class="hangmanbody"></div>
         <div class="hangmanleftarm"></div>
         <div class="hangmanrightarm"></div>
+        <img class= "hangmancrossleft" src= "/static/red_cross.png" />
+        <img class= "hangmancrossright" src= "/static/red_cross.png" />
+        <img class= "hangmantongue" src= "/static/tongue.png" />
     {{else if eq .Attempts 1}}
         <div class="hangmanhead"></div>
         <div class="hangmanrope"></div>
@@ -61,6 +74,9 @@
         <div class="hangmanleftarm"></div>
         <div class="hangmanrightarm"></div>
         <div class="hangmanleftleg"></div>
+        <img class= "hangmancrossleft" src= "/static/red_cross.png" />
+        <img class= "hangmancrossright" src= "/static/red_cross.png" />
+        <img class= "hangmantongue" src= "/static/tongue.png" />
 {{end}}
 </div>
 {{end}}

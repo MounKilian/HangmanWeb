@@ -111,7 +111,7 @@ h1.title{
 }
 
 .hangmanrope{
-    border-top: 2px solid #000;
+    border-top: 1px solid #000;
     width : 70px;
     transform: rotate(90deg);
     position: absolute;
@@ -120,15 +120,15 @@ h1.title{
 }
 
 .hangmanhorizontalwood{
-    border-top: 2px solid #000;
-    width : 200px;
+    border-top: 5px solid #000;
+    width : 202px;
     position: absolute;
     top: 170px;
     left: 168px;
 }
 
 .hangmanverticalwood{
-    border-top: 2px solid #000;
+    border-top: 5px solid #000;
     width : 300px;
     transform: rotate(90deg);
     position: absolute;
@@ -137,24 +137,24 @@ h1.title{
 }
 
 .hangmanpillar{
-    border-top: 2px solid #000;
-    width : 30px;
+    border-top: 5px solid #000;
+    width : 35px;
     transform: rotate(45deg);
     position: absolute;
-    top: 180px;
-    left: 342px;
+    top: 183px;
+    left: 337px;
 }
 
 .hangmanbegin{
-    border-top: 4px solid #000;
-    width : 120px;
+    border-top: 15px solid #000;
+    width : 150px;
     position: absolute;
     top: 470px;
     left: 290px;
 }
 
 .hangmanbody{
-    border-top: 2px solid #000;
+    border-top: 4px solid #000;
     width : 100px;
     position: absolute;
     transform: rotate(90deg);
@@ -163,7 +163,7 @@ h1.title{
 }
 
 .hangmanleftarm{
-    border-top: 2px solid #000;
+    border-top: 3px solid #000;
     width : 60px;
     position: absolute;
     transform: rotate(45deg);
@@ -172,7 +172,7 @@ h1.title{
 }
 
 .hangmanrightarm{
-    border-top: 2px solid #000;
+    border-top: 3px solid #000;
     width : 60px;
     position: absolute;
     transform: rotate(-45deg);
@@ -181,16 +181,16 @@ h1.title{
 }
 
 .hangmanleftleg{
-    border-top: 2px solid #000;
+    border-top: 3px solid #000;
     width : 60px;
     position: absolute;
     transform: rotate(45deg);
     top: 400px;
-    left: 194px;
+    left: 193px;
 }
 
 .hangmanrightleg{
-    border-top: 2px solid #000;
+    border-top: 3px solid #000;
     width : 60px;
     position: absolute;
     transform: rotate(-45deg);
@@ -472,3 +472,25 @@ p.title{
     margin-left: 34%;
     gap: 10%;
 }
+
+.hangmancrossleft{
+    width: 20px;
+    position: absolute;
+    top: 245px;
+    left: 202px;
+}
+
+.hangmancrossright{
+    width: 20px;
+    position: absolute;
+    top: 245px;
+    left: 184px;
+}
+
+.hangmantongue{
+    width: 45px;
+    position: absolute;
+    top: 250px;
+    left: 184px;
+}
+
