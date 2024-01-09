@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
 
-@media all and (min-width:751px) {
+@media all and (min-width:901px) {
     
 body{
     font-family: 'Courier New', Courier, monospace;
@@ -46,15 +46,25 @@ nav a:hover {
 }
 
 .Welcome{
-	text-align: center;
-	color: rgb(255, 154, 53);
+    text-align: center;
 	font-size: 65px;
 	margin-top: 10%;
 	text-transform: uppercase;
 	font-weight: 900;
     font-family: 'Rubik Doodle Shadow';
+    animation: mymove 4s;
+    color: rgb(255, 154, 53);
 }
 
+@keyframes mymove {
+    0% {
+        color: rgba(255, 0, 0, 0);
+    }
+    100% {
+        color: rgb(255, 154, 53);
+    }
+}
+ 
 h1.title{
     text-decoration:underline;
     margin-top: 2%;
@@ -497,7 +507,7 @@ p.title{
 }
 }
 
-@media all and (max-width:750px) {
+@media all and (max-width:900px) {
 
     body{
         font-family: 'Courier New', Courier, monospace;
@@ -550,7 +560,7 @@ p.title{
         text-transform: uppercase;
         font-weight: 900;
         font-family: 'Rubik Doodle Shadow';
-     }
+    }
         
     h1.title{
         text-decoration:underline;
@@ -626,7 +636,7 @@ p.title{
         width : 140px;
         position: absolute;
         top: 455px;
-        left: 243px;
+        left:  243px;
     }
 
     .hangmanverticalwood{
@@ -995,25 +1005,4 @@ p.title{
         margin-left: 34%;
         gap: 10%;
     }
-    
-    .hangmancrossleft{
-        width: 20px;
-        position: absolute;
-        top: 245px;
-        left: 202px;
-    }
-    
-    .hangmancrossright{
-        width: 20px;
-        position: absolute;
-        top: 245px;
-        left: 184px;
-    }
-    
-    .hangmantongue{
-        width: 45px;
-        position: absolute;
-        top: 250px;
-        left: 184px;
-    }
-    }
+}

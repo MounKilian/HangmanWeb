@@ -2,7 +2,9 @@
 <div class="hangman">
     <h1 class="title">Hangman</h1>
     {{if eq .Attempts 9}}
-        <div class="hangmanbegin"></div>
+        <div class="center">
+            <div class="hangmanbegin"></div>
+        </div>
     {{else if eq .Attempts 8}}
         <div class="hangmanbegin"></div>
         <div class="hangmanverticalwood"></div>
@@ -28,16 +30,18 @@
         <img class= "hangmancrossright" src= "/static/red_cross.png" />
         <img class= "hangmantongue" src= "/static/tongue.png" />
     {{else if eq .Attempts 4}}
-        <div class="hangmanhead"></div>
-        <div class="hangmanrope"></div>
-        <div class="hangmanhorizontalwood"></div>
-        <div class="hangmanverticalwood"></div>
-        <div class="hangmanpillar"></div>
-        <div class="hangmanbegin"></div>
-        <div class="hangmanbody"></div>
-        <img class= "hangmancrossleft" src= "/static/red_cross.png" />
-        <img class= "hangmancrossright" src= "/static/red_cross.png" />
-        <img class= "hangmantongue" src= "/static/tongue.png" />
+        <div class="center">
+            <div class="hangmanhead"></div>
+            <div class="hangmanrope"></div>
+            <div class="hangmanhorizontalwood"></div>
+            <div class="hangmanverticalwood"></div>
+            <div class="hangmanpillar"></div>
+            <div class="hangmanbegin"></div>
+            <div class="hangmanbody"></div>
+            <img class= "hangmancrossleft" src= "/static/red_cross.png" />
+            <img class= "hangmancrossright" src= "/static/red_cross.png" />
+            <img class= "hangmantongue" src= "/static/tongue.png" />
+        </div>
     {{else if eq .Attempts 3}}
         <div class="hangmanhead"></div>
         <div class="hangmanrope"></div>
