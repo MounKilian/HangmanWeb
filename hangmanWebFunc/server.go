@@ -8,6 +8,7 @@ import (
 
 func Server() {
 	H := hangman.New("words.txt", "default")
+	H.TypeOfGame = false
 	Read(H)
 	Refresh(H)
 	http.HandleFunc("/game", func(w http.ResponseWriter, r *http.Request) {
@@ -34,7 +35,9 @@ func Server() {
 	http.HandleFunc("/hardgame", func(w http.ResponseWriter, r *http.Request) {
 		HardGame(w, r, H)
 	})
-	http.HandleFunc("/login", Login)
+	http.HandleFunc("/login",func(w http.ResponseWriter, r *http.Request) {
+		Login(w, r, H)
+	})
 	http.HandleFunc("/username", func(w http.ResponseWriter, r *http.Request) {
 		Username(w, r, H)
 	})

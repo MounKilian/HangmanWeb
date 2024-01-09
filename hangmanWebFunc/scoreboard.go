@@ -93,3 +93,36 @@ func Refresh(H *hangman.HangManData) {
 		}
 	}
 }
+
+func ReadSignIn() [][]string {
+	f, err := os.Open("account.csv")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer f.Close()
+
+	reader := csv.NewReader(f)
+
+	records, err := reader.ReadAll()
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	return records
+}
+
+func Save(AllAccount [][]string, Account []string) {
+	file, err := os.Create("account.csv")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer file.Close()
+
+	writer := csv.NewWriter(file)
+
+	defer writer.Flush()
+
+	writer.WriteAll(AllAccount)
+	writer.Write(Account)
+}

@@ -224,7 +224,6 @@ h1.title{
 
 .username{
     text-align: center;
-    padding:10%;
     font-family: 'Rubik Doodle Shadow';
     color: darkorange;
 }
@@ -233,6 +232,12 @@ form h4{
     text-transform: capitalize;
     font-weight:bolder;
     font-size: 25px;
+}
+
+h4.error{
+    text-align: center;
+    color: red;
+    font-weight: bold;
 }
 
 .input {
@@ -731,7 +736,6 @@ p.title{
     
     .username{
         text-align: center;
-        padding:10%;
         font-family: 'Rubik Doodle Shadow';
         color: darkorange;
     }
@@ -740,7 +744,13 @@ p.title{
         text-transform: capitalize;
         font-weight:bolder;
         font-size: 25px;
-    }    
+    }   
+    
+    h4.error{
+        text-align: center;
+        color: red;
+        font-weight: bold;
+    }
 
     .input {
         width: 200px; 

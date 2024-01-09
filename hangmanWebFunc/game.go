@@ -101,12 +101,12 @@ func HardGame(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
 	http.Redirect(w, r, "/game", http.StatusFound)
 }
 
-func Login(w http.ResponseWriter, r *http.Request) {
+func Login(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
 	template, err := template.ParseFiles("./pages/login.html", "./templates/header.html")
 	if err != nil {
 		log.Fatal(err)
 	}
-	template.Execute(w, nil)
+	template.Execute(w, H)
 }
 
 func Scoreboard(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
@@ -120,7 +120,17 @@ func Scoreboard(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) 
 }
 
 func Username(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
-	H.Username = r.FormValue("User")
+	H.Username = r.FormValue("SignInUsername")
+	H.Password = r.FormValue("SignInPassword")
+	H.Email = r.FormValue("SignInEmail")
 	H.Point = 0
-	http.Redirect(w, r, "/level", http.StatusFound)
+	Account := []string{H.Username, H.Email, H.Password}
+	if Email(Account) {
+		AllAccount := ReadSignIn()
+		Save(AllAccount, Account)
+		http.Redirect(w, r, "/level", http.StatusFound)
+	} else {
+		H.TypeOfGame = true
+		http.Redirect(w, r, "/login", http.StatusFound)
+	}
 }

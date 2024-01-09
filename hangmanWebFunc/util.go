@@ -54,3 +54,16 @@ func DetectLevel(H *hangman.HangManData) {
 		H.Level = "hard"
 	}
 }
+
+func Email(H []string) bool {
+	AllAccount := ReadSignIn()
+	for _, Account := range AllAccount {
+		if Account[1] == H[1] {
+			return false
+		}
+		if Account[0] == H[0] {
+			return false
+		}
+	}
+	return true
+}
