@@ -132,7 +132,8 @@ func Scoreboard(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) 
 func Username(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
 	if !H.TypeOfGame {
 		H.Username = r.FormValue("SignInUsername")
-		H.Password = r.FormValue("SignInPassword")
+		H.Password = r.FormValue("LogInPassword")
+		H.Password = hashPassword(H.Password)
 		H.Email = r.FormValue("SignInEmail")
 		H.Point = 0
 		Account := []string{H.Username, H.Email, H.Password}
@@ -146,6 +147,7 @@ func Username(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
 		}
 	} else {
 		H.Password = r.FormValue("LogInPassword")
+		H.Password = hashPassword(H.Password)
 		H.Email = r.FormValue("LogInEmail")
 		Account := []string{H.Username, H.Email, H.Password}
 		if AcccountUse(Account, H) {

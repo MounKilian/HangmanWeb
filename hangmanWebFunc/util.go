@@ -1,6 +1,8 @@
 package hangmanWeb
 
 import (
+	"crypto/sha256"
+	"fmt"
 	"log"
 	"strconv"
 
@@ -115,4 +117,10 @@ func Log(H *hangman.HangManData) {
 			H.NewScore = []string{H.Username, strconv.Itoa(H.Point), H.Level, strconv.Itoa(H.Win), strconv.Itoa(H.Loose)}
 		}
 	}
+}
+
+// encrypt password
+func hashPassword(password string) string {
+	hash := sha256.Sum256([]byte(password))
+	return fmt.Sprintf("%x", hash)
 }
