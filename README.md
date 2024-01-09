@@ -33,6 +33,8 @@ Somes knowledges in this field :
 ```bash
   http://localhost:8080/
 ```
+3. You can find my mockup here :
+https://www.figma.com/file/5AeIylXfoXAawD8nwkm7ZE/Hangman-Web-Kilian-Moun?type=design&node-id=19%3A10&mode=design&t=V7WYwncUPgw3gmYS-1
 
 # How Play ? :hammer:
 

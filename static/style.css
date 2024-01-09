@@ -281,7 +281,8 @@ form h4{
 }
 
 .ez {
-    margin-left: 25%;
+    margin-left: auto;
+    margin-right: auto;
     cursor: pointer;
     width: 184px;
     height: 48px;
@@ -298,10 +299,11 @@ form h4{
   
 .ez:hover {
     transform: translateY(8px);
+    border: 1px solid darkgreen;
+    box-shadow: 0 4px 0 darkgreen;
 }
 
 .med {
-    margin-left: 2%;
     cursor: pointer;
     width: 184px;
     height: 48px;
@@ -318,10 +320,13 @@ form h4{
   
 .med:hover {
     transform: translateY(8px);
+    border: 1px solid darkorange;
+    box-shadow: 0 4px 0 darkorange;
 }
 
 .hard {
-    margin-left: 2%;
+    margin-left: auto;
+    margin-right: auto;
     cursor: pointer;
     width: 184px;
     height: 48px;
@@ -338,6 +343,8 @@ form h4{
   
 .hard:hover {
     transform: translateY(8px);
+    border: 1px solid darkred;
+    box-shadow: 0 4px 0 darkred;
 }
 
 button a{
@@ -802,7 +809,8 @@ p.title{
     }
 
     .ez {
-        margin-left: 25%;
+        margin-left: auto;
+        margin-right: auto;
         cursor: pointer;
         width: 184px;
         height: 48px;
@@ -819,10 +827,13 @@ p.title{
       
     .ez:hover {
         transform: translateY(8px);
+        border: 1px solid darkgreen;
+        box-shadow: 0 4px 0 darkgreen;
     }
     
     .med {
-        margin-left: 2%;
+        margin-left: auto;
+        margin-right: auto;
         cursor: pointer;
         width: 184px;
         height: 48px;
@@ -839,10 +850,13 @@ p.title{
       
     .med:hover {
         transform: translateY(8px);
+        border: 1px solid darkorange;
+        box-shadow: 0 4px 0 darkorange;
     }
     
     .hard {
-        margin-left: 2%;
+        margin-left: auto;
+        margin-right: auto;
         cursor: pointer;
         width: 184px;
         height: 48px;
@@ -859,6 +873,8 @@ p.title{
       
     .hard:hover {
         transform: translateY(8px);
+        border: 1px solid darkred;
+        box-shadow: 0 4px 0 darkred;
     }
     
     button a{
