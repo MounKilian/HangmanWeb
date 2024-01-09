@@ -44,7 +44,7 @@ func GameBack(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
 }
 
 func Menu(w http.ResponseWriter, r *http.Request) {
-	template, err := template.ParseFiles("./index.html", "./templates/header.html")
+	template, err := template.ParseFiles("./index.html", "./templates/header.html", "./templates/footer.html")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -52,7 +52,7 @@ func Menu(w http.ResponseWriter, r *http.Request) {
 }
 
 func Help(w http.ResponseWriter, r *http.Request) {
-	template, err := template.ParseFiles("./pages/help.html", "./templates/header.html")
+	template, err := template.ParseFiles("./pages/help.html", "./templates/header.html", "./templates/footer.html")
 	if err != nil {
 		log.Fatal(err)
 	}

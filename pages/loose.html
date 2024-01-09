@@ -8,9 +8,9 @@
     <body>
         {{template "header"}}
         <p class="title">LOOSE !</p><br>
-        <p>The word was {{.ToFind}} !</p>
+        <p class="white">The word was {{.ToFind}} !</p>
         {{template "ranking" .}}
-        <p> Congratulation {{.Username}} ! Your score in {{.Level}} level is {{.Point}} pts</p>
+        <p class="white"> Congratulation {{.Username}} ! Your score in {{.Level}} level is {{.Point}} pts</p>
         {{if eq .Level "easy"}}
             <button class="restart"><a href="/easygame">RESTART</a></button>
         {{else if eq .Level "medium"}}

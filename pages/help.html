@@ -7,7 +7,11 @@
     </head>
     <body>
         {{template "header"}}
-        <h1 class="title"> Rules </h1>
+        <h1 class="title"> Help </h1>
+        <p class="white">When you start you can choose between the logo, "play", "scoreboard", "help".
+          The logo allows you to return to the menu
+          The icon "play" allows you to play HangmanGame, you have to write your username first and then choose the level you wants to play. When you are in the game you have 3 boxs the first print the hangman if you makes mistakes. The second print the word to find and the words already use. The last one is the user input.
+          "scoreboard" allows you to see the top 10 of the game. If you win you have point like this :</p>
         <table>
             <thead>
                 <tr class="scoreboard">
@@ -27,7 +31,8 @@
             </tr>
             </tbody>
         </table>
-        <p>The point you win is multiply by the numbers of attempts left. If you loose you don't win points.</p>
+        <p class="white">The point you win is multiply by the numbers of attempts left. If you loose you don't win points.</p>
+        <p class="white">The icon "help" can help you and gives you somes informations about the game. Moreover, you can find my contacts in this section.</p>
         <h1 class="title"> Contact </h1>
         <div class="contact">
         <button class="Button">
@@ -70,4 +75,5 @@
           </button>
         </div>
     </body>
+    {{template "footer"}}
 </html>

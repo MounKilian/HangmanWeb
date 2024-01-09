@@ -4,8 +4,8 @@
     
 body{
     font-family: 'Courier New', Courier, monospace;
-    color: black;
-    background : linear-gradient(to right, rgb(145, 145, 145), rgb(53, 52, 52))
+    color: rgb(0, 0, 0);
+    background : linear-gradient(to right, rgb(145, 145, 145), rgb(53, 52, 52));
 }
 
 p{
@@ -15,13 +15,15 @@ p{
     font-weight: 600;
 }
 
+
+
 nav {
 	margin:-10px auto;
     width: 100%;
     height: 80px;
     background: linear-gradient(to top, rgb(192, 145, 59),rgb(166, 106, 33)); 
 }	
- 
+
 nav .head {
     display: flex;
     justify-content: space-around;
@@ -56,12 +58,19 @@ nav a:hover {
     color: rgb(255, 154, 53);
 }
 
+.white{
+    color: white;
+    text-shadow: 2px 2px 4px black;
+}
+
 @keyframes mymove {
     0% {
         color: rgba(255, 0, 0, 0);
+        text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
     }
     100% {
         color: rgb(255, 154, 53);
+        text-shadow: 2px 2px 4px black;
     }
 }
  
@@ -355,6 +364,9 @@ h4.error{
 button a{
     text-decoration: none;
     color:#000;
+    width: 100%;
+    padding-bottom: 15%;
+    padding-top: 15%;
 }
 
 .level{
@@ -415,6 +427,8 @@ tr.scoreboard{
 
 .restart:hover{
     transform: translateY(8px);
+    border: 1px solid darkorange;
+    box-shadow: 0 4px 0 darkorange;
 }
 
 p.title{
@@ -533,6 +547,10 @@ p.title{
         color: black;
         font-weight: 600;
     }
+
+    .orange{
+        color:orange
+    }
         
     nav {
         margin:-10px auto;
@@ -572,6 +590,23 @@ p.title{
         text-transform: uppercase;
         font-weight: 900;
         font-family: 'Rubik Doodle Shadow';
+        animation: mymove 4s;
+    }
+    
+    .white{
+        color: white;
+        text-shadow: 2px 2px 4px black;
+    }
+    
+    @keyframes mymove {
+        0% {
+            color: rgba(255, 0, 0, 0);
+            text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+        }
+        100% {
+            color: rgb(255, 154, 53);
+            text-shadow: 2px 2px 4px black;
+        }
     }
         
     h1.title{
@@ -890,7 +925,11 @@ p.title{
     button a{
         text-decoration: none;
         color:#000;
+        width: 100%;
+        padding-bottom: 15%;
+        padding-top: 15%;
     }
+    
     
     .level{
         display:flex;
@@ -1047,6 +1086,10 @@ p.title{
         color: black;
         font-weight: 600;
     }
+
+    .orange{
+        color:orange
+    }
         
     nav {
         margin:-10px auto;
@@ -1086,6 +1129,23 @@ p.title{
         text-transform: uppercase;
         font-weight: 900;
         font-family: 'Rubik Doodle Shadow';
+        animation: mymove 4s;
+    }
+    
+    .white{
+        color: white;
+        text-shadow: 2px 2px 4px black;
+    }
+    
+    @keyframes mymove {
+        0% {
+            color: rgba(255, 0, 0, 0);
+            text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+        }
+        100% {
+            color: rgb(255, 154, 53);
+            text-shadow: 2px 2px 4px black;
+        }
     }
         
     h1.title{
@@ -1404,7 +1464,11 @@ p.title{
     button a{
         text-decoration: none;
         color:#000;
+        width: 100%;
+        padding-bottom: 15%;
+        padding-top: 15%;
     }
+    
     
     .level{
         display:flex;
