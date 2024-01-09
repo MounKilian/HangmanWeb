@@ -7,6 +7,7 @@ import (
 	"github.com/MounKilian/hangman"
 )
 
+// Init the data for play
 func InitGame(H *hangman.HangManData) {
 	if H.Point == 0 {
 		H.Loose = 0
@@ -24,6 +25,7 @@ func InitGame(H *hangman.HangManData) {
 	hangman.FirstLetter(H)
 }
 
+// When user input smthg make some verification
 func GameLoop(H *hangman.HangManData) int {
 	if !hangman.VerifIfAlreadyUse(H) && (H.LetterInput >= "a" && H.LetterInput <= "z") {
 		H.Letters += H.LetterInput + " | "
@@ -46,6 +48,7 @@ func GameLoop(H *hangman.HangManData) int {
 	}
 }
 
+// Detect the level with the word file
 func DetectLevel(H *hangman.HangManData) {
 	if H.WordFile == "words.txt" {
 		H.Level = "easy"
@@ -56,6 +59,7 @@ func DetectLevel(H *hangman.HangManData) {
 	}
 }
 
+// Detect the word file with the level
 func DetectFile(H *hangman.HangManData) {
 	if H.Level == "easy" {
 		H.WordFile = "words.txt"
@@ -66,19 +70,18 @@ func DetectFile(H *hangman.HangManData) {
 	}
 }
 
+// Verification if Email or Username is already use (sign in)
 func Email(H []string) bool {
 	AllAccount := ReadSignIn()
 	for _, Account := range AllAccount {
-		if Account[1] == H[1] {
-			return false
-		}
-		if Account[0] == H[0] {
+		if Account[1] == H[1] || Account[0] == H[0] {
 			return false
 		}
 	}
 	return true
 }
 
+// Verification if Email or Username is already use (log in)
 func AcccountUse(Account []string, H *hangman.HangManData) bool {
 	AllAccount := ReadSignIn()
 	for _, Acc := range AllAccount {
@@ -90,6 +93,7 @@ func AcccountUse(Account []string, H *hangman.HangManData) bool {
 	return false
 }
 
+// data for start game when someone log in
 func Log(H *hangman.HangManData) {
 	for _, rec := range H.Scoreboard {
 		if H.Username == rec[0] {
