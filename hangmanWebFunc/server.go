@@ -35,7 +35,7 @@ func Server() {
 	http.HandleFunc("/hardgame", func(w http.ResponseWriter, r *http.Request) {
 		HardGame(w, r, H)
 	})
-	http.HandleFunc("/login",func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/login", func(w http.ResponseWriter, r *http.Request) {
 		Login(w, r, H)
 	})
 	http.HandleFunc("/username", func(w http.ResponseWriter, r *http.Request) {
@@ -43,6 +43,9 @@ func Server() {
 	})
 	http.HandleFunc("/scoreboard", func(w http.ResponseWriter, r *http.Request) {
 		Scoreboard(w, r, H)
+	})
+	http.HandleFunc("/change", func(w http.ResponseWriter, r *http.Request) {
+		Change(w, r, H)
 	})
 	fs := http.FileServer(http.Dir("static/"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))

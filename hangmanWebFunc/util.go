@@ -1,6 +1,7 @@
 package hangmanWeb
 
 import (
+	"log"
 	"strconv"
 
 	"github.com/MounKilian/hangman"
@@ -55,6 +56,16 @@ func DetectLevel(H *hangman.HangManData) {
 	}
 }
 
+func DetectFile(H *hangman.HangManData) {
+	if H.Level == "easy" {
+		H.WordFile = "words.txt"
+	} else if H.Level == "medium" {
+		H.WordFile = "words2.txt"
+	} else if H.Level == "hard" {
+		H.WordFile = "words3.txt"
+	}
+}
+
 func Email(H []string) bool {
 	AllAccount := ReadSignIn()
 	for _, Account := range AllAccount {
@@ -66,4 +77,38 @@ func Email(H []string) bool {
 		}
 	}
 	return true
+}
+
+func AcccountUse(Account []string, H *hangman.HangManData) bool {
+	AllAccount := ReadSignIn()
+	for _, Acc := range AllAccount {
+		if Acc[1] == Account[1] && Acc[2] == Account[2] {
+			H.Username = Acc[0]
+			return true
+		}
+	}
+	return false
+}
+
+func Log(H *hangman.HangManData) {
+	for _, rec := range H.Scoreboard {
+		if H.Username == rec[0] {
+			var err error
+			H.Point, err = strconv.Atoi(rec[1])
+			if err != nil {
+				log.Fatal(err)
+			}
+			H.Win, err = strconv.Atoi(rec[3])
+			if err != nil {
+				log.Fatal(err)
+			}
+			H.Loose, err = strconv.Atoi(rec[4])
+			if err != nil {
+				log.Fatal(err)
+			}
+			H.Level = rec[2]
+			DetectFile(H)
+			H.NewScore = []string{H.Username, strconv.Itoa(H.Point), H.Level, strconv.Itoa(H.Win), strconv.Itoa(H.Loose)}
+		}
+	}
 }

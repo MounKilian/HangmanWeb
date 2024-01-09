@@ -7,22 +7,44 @@
     </head>
     {{template "header"}}
     <body> 
-        {{if eq .TypeOfGame true}}
+        {{if eq .Attempts 1}}
             <h4 class="error">Email or Username already use</h4>
+        {{else if eq .Attempts 2}}
+            <h4 class="error">Wrong Email or wrong Password </h4>
         {{end}}
-        <form class="username" method="post" action="/username">
-            <h4>What is your username ?</h4>
-            <input class="input" required type="text" name="SignInUsername">
-            <br>
-            <h4>What is your email ?</h4>
-            <input class="input" required type="email" name="SignInEmail">
-            <br>
-            <h4>What is your password ?</h4>
-            <input class="input" required type="password" name="SignInPassword">
-            <br>
+        {{if eq .TypeOfGame false}}
             <button class="buttonusername">
-                Start
+                <a href="/change">Log In</a>
             </button>
-        </form> 
+            <form class="username" method="post" action="/username">
+                <h4>What is your username ?</h4>
+                <input class="input" required type="text" name="SignInUsername">
+                <br>
+                <h4>What is your email ?</h4>
+                <input class="input" required type="email" name="SignInEmail">
+                <br>
+                <h4>What is your password ?</h4>
+                <input class="input" required type="password" name="SignInPassword">
+                <br>
+                <button class="buttonusername">
+                    Start
+                </button>
+            </form> 
+        {{else if eq .TypeOfGame true}}
+            <button class="buttonusername">
+                <a href="/change">Sign In</a>
+            </button>
+            <form class="username" method="post" action="/username">
+                <h4>What is your email ?</h4>
+                <input class="input" required type="email" name="LogInEmail">
+                <br>
+                <h4>What is your password ?</h4>
+                <input class="input" required type="password" name="LogInPassword">
+                <br>
+                <button class="buttonusername">
+                    Start
+                </button>
+            </form> 
+        {{end}}
     </body>
 </html>
