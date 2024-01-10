@@ -83,11 +83,11 @@ func Email(H []string) bool {
 	return true
 }
 
-// Verification if Email or Username is already use (log in)
+// Verification if Email and Password are correct (log in)
 func AcccountUse(Account []string, H *hangman.HangManData) bool {
 	AllAccount := ReadSignIn()
 	for _, Acc := range AllAccount {
-		if Acc[1] == Account[1] && Acc[2] == Account[2] {
+		if Acc[1] == Account[1] && Account[2] == Acc[2] {
 			H.Username = Acc[0]
 			return true
 		}
