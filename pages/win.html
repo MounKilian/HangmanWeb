@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hangman Web</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="./static/style.css" />
+    </head>
+    <body>
+        {{template "header"}}
+        <p class="title">WIN !</p>
+        <p class="white">The word was {{.ToFind}} !</p>
+        {{template "ranking" .}}
+        <p class="white"> Congratulation {{.Username}} ! Your score in {{.Level}} level is {{.Point}} pts</p>
+        {{if eq .Level "easy"}}
+            <button class="restart"><a href="/easygame">RESTART</a></button>
+        {{else if eq .Level "medium"}}
+            <button class="restart"><a href="/mediumgame">RESTART</a></button>
+        {{else if eq .Level "hard"}}
+            <button class="restart"><a href="/hardgame">RESTART</a></button>
+        {{end}}
+    </body>
+</html>

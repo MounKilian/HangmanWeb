@@ -1,0 +1,1612 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
+
+@media all and (min-width:901px) {
+    
+body{
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(0, 0, 0);
+    background : linear-gradient(to right, rgb(145, 145, 145), rgb(53, 52, 52));
+}
+
+p{
+    text-align: center;
+    font-family:'Courier New', Courier, monospace;
+    color: black;
+    font-weight: 600;
+}
+
+
+
+nav {
+	margin:-10px auto;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to top, rgb(192, 145, 59),rgb(166, 106, 33)); 
+}	
+
+nav .head {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+ 
+nav .head a {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    text-decoration: none;
+    font-family: 'Rubik Doodle Shadow';
+	font-weight: bolder;
+	text-transform: uppercase;
+    color: lightgray;
+}
+ 
+nav a:hover {
+    background: rgb(131, 130, 133)
+}
+
+.Welcome{
+    text-align: center;
+	font-size: 65px;
+	margin-top: 10%;
+	text-transform: uppercase;
+	font-weight: 900;
+    font-family: 'Rubik Doodle Shadow';
+    animation: mymove 4s;
+    color: rgb(255, 154, 53);
+}
+
+.white{
+    color: white;
+    text-shadow: 2px 2px 4px black;
+}
+
+@keyframes mymove {
+    0% {
+        color: rgba(255, 0, 0, 0);
+        text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+    }
+    100% {
+        color: rgb(255, 154, 53);
+        text-shadow: 2px 2px 4px black;
+    }
+}
+ 
+h1.title{
+    text-decoration:underline;
+    margin-top: 2%;
+    text-align: center;
+    color :  rgb(255, 154, 53);
+    font-family:'Rubik Doodle Shadow' ;
+}
+
+.informations{
+    height: 280px;
+    float: right;
+    background:linear-gradient(to right, rgb(254, 208, 161),rgb(245, 187, 130));
+    border-bottom: 5px solid rgb(255, 154, 53);
+    border-top: 5px solid rgb(255, 154, 53);
+    border-left: 5px solid rgb(255, 154, 53);
+    border-right: 5px solid rgb(255, 154, 53);
+    text-align: center;
+    width: 48%;
+    margin-top: 1%;
+}
+
+.choose{
+    height: 220px;
+    float:inline-end;
+    background:linear-gradient(to right, rgb(254, 208, 161),rgb(245, 187, 130));
+    border-bottom: 5px solid rgb(255, 154, 53);
+    border-top: 5px solid rgb(255, 154, 53);
+    border-left: 5px solid rgb(255, 154, 53);
+    border-right: 5px solid rgb(255, 154, 53);
+    text-align: center;
+    width: 48%;
+    margin-top : 10px; 
+}
+
+.hangman{
+    height: 520px;
+    float: left;
+    background:linear-gradient(to right, rgb(254, 208, 161),rgb(245, 187, 130));
+    border-bottom: 5px solid rgb(255, 154, 53);
+    border-top: 5px solid rgb(255, 154, 53);
+    border-left: 5px solid rgb(255, 154, 53);
+    border-right: 5px solid rgb(255, 154, 53);
+    text-align: center;
+    width: 49%;
+    margin-top : 1%;
+}
+
+.hangmanhead{
+    background:black;
+    border-radius:50%;
+    width:45px;
+    height:45px;
+    position: absolute;
+    top: 240px;
+    left: 180px;
+}
+
+.hangmanrope{
+    border-top: 1px solid #000;
+    width : 70px;
+    transform: rotate(90deg);
+    position: absolute;
+    top: 205px;
+    left: 168px;
+}
+
+.hangmanhorizontalwood{
+    border-top: 5px solid #000;
+    width : 202px;
+    position: absolute;
+    top: 170px;
+    left: 168px;
+}
+
+.hangmanverticalwood{
+    border-top: 5px solid #000;
+    width : 300px;
+    transform: rotate(90deg);
+    position: absolute;
+    top: 320px;
+    left: 217px;
+}
+
+.hangmanpillar{
+    border-top: 5px solid #000;
+    width : 35px;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 183px;
+    left: 337px;
+}
+
+.hangmanbegin{
+    border-top: 15px solid #000;
+    width : 150px;
+    position: absolute;
+    top: 470px;
+    left: 290px;
+}
+
+.hangmanbody{
+    border-top: 4px solid #000;
+    width : 100px;
+    position: absolute;
+    transform: rotate(90deg);
+    top: 330px;
+    left: 153px;
+}
+
+.hangmanleftarm{
+    border-top: 3px solid #000;
+    width : 60px;
+    position: absolute;
+    transform: rotate(45deg);
+    top: 300px;
+    left: 152px;
+}
+
+.hangmanrightarm{
+    border-top: 3px solid #000;
+    width : 60px;
+    position: absolute;
+    transform: rotate(-45deg);
+    top: 300px;
+    left: 194px;
+}
+
+.hangmanleftleg{
+    border-top: 3px solid #000;
+    width : 60px;
+    position: absolute;
+    transform: rotate(45deg);
+    top: 400px;
+    left: 193px;
+}
+
+.hangmanrightleg{
+    border-top: 3px solid #000;
+    width : 60px;
+    position: absolute;
+    transform: rotate(-45deg);
+    top: 400px;
+    left: 152px;
+}
+
+.red{
+    margin-top: 10%;
+    color: red;
+    font-weight: bolder ;
+}
+
+.hangmanpicture{
+    filter: invert(100%);
+    width: 20%;
+    text-align: center;
+}
+
+.username{
+    text-align: center;
+    font-family: 'Rubik Doodle Shadow';
+    color: darkorange;
+}
+
+form h4{
+    text-transform: capitalize;
+    font-weight:bolder;
+    font-size: 25px;
+}
+
+h4.error{
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
+
+.input {
+    width: 300px; 
+    height: 50px;
+    border-radius: 5px;
+    border: 2px solid darkorange;
+    background-color: rgb(245, 187, 130);
+    box-shadow: 4px 4px darkorange;
+    font-size: 15px;
+    font-weight: 600;
+    color: black;
+    padding: 5px 10px;
+    outline: none;
+}
+  
+.input::placeholder {
+    color: black;
+    opacity: 0.8;
+}
+  
+.input:focus {
+    border: 2px solid darkorange;
+}
+
+.buttonusername {
+    cursor: pointer;
+    width: 150px;
+    border: 2px solid darkorange;
+    background-color: rgb(245, 187, 130);
+    box-shadow: 4px 4px darkorange;
+    color: black;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    margin-left: 42%;
+    margin-top: 2%;
+    font-weight: bolder;
+    font-family: 'Rubik Doodle Shadow';
+}
+
+.buttonusername:hover{
+    border: 2px solid rgb(245, 187, 130);
+    background-color: darkorange;
+    box-shadow: 4px 4px darkorange;
+}
+
+.ez {
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    width: 184px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 120%;
+    font-weight: bolder;
+    background: green;
+    border: 2px solid darkgreen;
+    border-radius: .75rem;
+    box-shadow: 0 8px 0 darkgreen;
+}
+  
+.ez:hover {
+    transform: translateY(8px);
+    border: 1px solid darkgreen;
+    box-shadow: 0 4px 0 darkgreen;
+}
+
+.med {
+    cursor: pointer;
+    width: 184px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 120%;
+    font-weight: bolder;
+    background: orange;
+    border: 2px solid darkorange;
+    border-radius: .75rem;
+    box-shadow: 0 8px 0 darkorange;
+}
+  
+.med:hover {
+    transform: translateY(8px);
+    border: 1px solid darkorange;
+    box-shadow: 0 4px 0 darkorange;
+}
+
+.hard {
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    width: 184px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 120%;
+    font-weight: bolder;
+    background: red;
+    border: 2px solid darkred;
+    border-radius: .75rem;
+    box-shadow: 0 8px 0 darkred;
+}
+  
+.hard:hover {
+    transform: translateY(8px);
+    border: 1px solid darkred;
+    box-shadow: 0 4px 0 darkred;
+}
+
+button a{
+    text-decoration: none;
+    color:#000;
+    width: 100%;
+    padding-bottom: 15%;
+    padding-top: 15%;
+}
+
+.level{
+    display:flex;
+    margin-top:15%;
+}
+
+table{
+    border: 2px solid darkorange;
+    width: 90%;
+    margin:auto;
+    margin-top: 3%;
+    background-color: rgb(245, 187, 130);
+    border-radius: 5px;
+}
+
+.titlerank{
+    border-bottom: 2px solid darkorange;
+    font-size: 200%; 
+    font-family: 'Rubik Doodle Shadow';
+    padding: 10px;
+}
+
+tr.scoreboard{
+    background : darkorange;
+}
+
+.rank{
+    text-align: center;
+    font-family: 'Rubik Doodle Shadow';
+    font-weight: bolder;
+}
+
+.stats{
+    text-align: center;
+    padding:4px;
+    border-bottom: 2px solid darkorange;
+    border-top: 2px solid darkorange;
+    font-weight: 500;
+}
+
+.restart{
+    margin-left: 42%;
+    margin-bottom: 50px;
+    cursor: pointer;
+    width: 184px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 120%;
+    font-weight: bolder;
+    background: orange;
+    border: 2px solid darkorange;
+    border-radius: .75rem;
+    box-shadow: 0 8px 0 darkorange;
+}
+
+.restart:hover{
+    transform: translateY(8px);
+    border: 1px solid darkorange;
+    box-shadow: 0 4px 0 darkorange;
+}
+
+p.title{
+    font-size: 50px;
+    text-decoration:underline;
+    margin-top: 10%;
+    text-align: center;
+    color :rgb(255, 154, 53);
+    font-family:'Rubik Doodle Shadow' ;
+}
+
+.help{
+    text-align: center;
+    padding:4px;
+    border-bottom: 2px solid darkorange;
+    border-top: 2px solid darkorange;
+    border-left: 2px solid darkorange;
+    border-right: 2px solid darkorange;
+    font-weight: 500;
+}
+
+.Button {
+    width: 70px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+    position: relative;
+    border-radius: 7px;
+    cursor: pointer;
+}
+  
+.img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border-radius: 10px;
+    border: 1px solid rgba(156, 156, 156, 0.466);
+}
+  
+.Back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #181818;
+    z-index: -1;
+    border-radius: 10px;
+}
+  
+.Button:hover .img {
+    background-color: rgba(156, 156, 156, 0.466);
+}
+  
+.Background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #0077b5;
+    z-index: -1;
+    border-radius: 10px;
+}
+
+.Bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #7289da;
+    z-index: -1;
+    border-radius: 10px;
+}
+
+.contact{
+    display: flex;
+    margin-left: 34%;
+    gap: 10%;
+}
+
+.hangmancrossleft{
+    width: 20px;
+    position: absolute;
+    top: 245px;
+    left: 202px;
+}
+
+.hangmancrossright{
+    width: 20px;
+    position: absolute;
+    top: 245px;
+    left: 184px;
+}
+
+.hangmantongue{
+    width: 45px;
+    position: absolute;
+    top: 250px;
+    left: 184px;
+}
+}
+
+@media all and (min-width:651px) and (max-width:900px) {
+
+    body{
+        font-family: 'Courier New', Courier, monospace;
+        color: black;
+        background : linear-gradient(to right, rgb(145, 145, 145), rgb(53, 52, 52))
+    }
+        
+    p{
+        text-align: center;
+        font-family:'Courier New', Courier, monospace;
+        color: black;
+        font-weight: 600;
+    }
+
+    .orange{
+        color:orange
+    }
+        
+    nav {
+        margin:-10px auto;
+        width: 100%;
+        height: 80px;
+        background: linear-gradient(to top, rgb(192, 145, 59),rgb(166, 106, 33)); 
+    }	
+        
+    nav .head {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+        
+    nav .head a {
+        width: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 80px;
+        text-decoration: none;
+        font-family: 'Rubik Doodle Shadow';
+        font-weight: bolder;
+        text-transform: uppercase;
+        color: lightgray;
+    }
+        
+    nav a:hover {
+        background: rgb(131, 130, 133)
+    }
+        
+    .Welcome{
+        text-align: center;
+        color: rgb(255, 154, 53);
+        font-size: 65px;
+        margin-top: 10%;
+        text-transform: uppercase;
+        font-weight: 900;
+        font-family: 'Rubik Doodle Shadow';
+        animation: mymove 4s;
+    }
+    
+    .white{
+        color: white;
+        text-shadow: 2px 2px 4px black;
+    }
+    
+    @keyframes mymove {
+        0% {
+            color: rgba(255, 0, 0, 0);
+            text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+        }
+        100% {
+            color: rgb(255, 154, 53);
+            text-shadow: 2px 2px 4px black;
+        }
+    }
+        
+    h1.title{
+        text-decoration:underline;
+        margin-top: 2%;
+        text-align: center;
+        color :  rgb(255, 154, 53);
+        font-family:'Rubik Doodle Shadow' ;
+    }
+        
+    .informations{
+        margin-left: auto;
+        margin-right: auto;
+        height: 280px;
+        background:linear-gradient(to right, rgb(254, 208, 161),rgb(245, 187, 130));
+        border-bottom: 5px solid rgb(255, 154, 53);
+        border-top: 5px solid rgb(255, 154, 53);
+        border-left: 5px solid rgb(255, 154, 53);
+        border-right: 5px solid rgb(255, 154, 53);
+        text-align: center;
+        width: 48%;
+        margin-top: 1%;
+    }
+
+    .choose{
+        margin-left: auto;
+        margin-right: auto;
+        height: 220px;
+        background:linear-gradient(to right, rgb(254, 208, 161),rgb(245, 187, 130));
+        border-bottom: 5px solid rgb(255, 154, 53);
+        border-top: 5px solid rgb(255, 154, 53);
+        border-left: 5px solid rgb(255, 154, 53);
+        border-right: 5px solid rgb(255, 154, 53);
+        text-align: center;
+        width: 48%;
+        margin-top : 10px; 
+    }
+
+    .hangman{
+        margin-left: auto;
+        margin-right: auto;
+        height: 520px;
+        background:linear-gradient(to right, rgb(254, 208, 161),rgb(245, 187, 130));
+        border-bottom: 5px solid rgb(255, 154, 53);
+        border-top: 5px solid rgb(255, 154, 53);
+        border-left: 5px solid rgb(255, 154, 53);
+        border-right: 5px solid rgb(255, 154, 53);
+        text-align: center;
+        width: 49%;
+        margin-top : 1%;
+    }
+
+    .hangmanhead{
+        background:black;
+        border-radius:50%;
+        width:30px;
+        height:30px;
+        position: absolute;
+        top: 503px;
+        left: 247px;
+    }
+
+    .hangmanrope{
+        border-top: 1px solid #000;
+        width : 45px;
+        transform: rotate(90deg);
+        position: absolute;
+        top: 480px;
+        left: 240px;
+    }
+
+    .hangmanhorizontalwood{
+        border-top: 3px solid #000;
+        width : 140px;
+        position: absolute;
+        top: 455px;
+        left:  243px;
+    }
+
+    .hangmanverticalwood{
+        border-top: 3px solid #000;
+        width : 250px;
+        transform: rotate(90deg);
+        position: absolute;
+        top: 580px;
+        left: 257px;
+    }
+
+    .hangmanpillar{
+        border-top: 3px solid #000;
+        width : 25px;
+        transform: rotate(45deg);
+        position: absolute;
+        top: 463px;
+        left: 360px;
+    }
+
+    .hangmanbegin{
+        border-top: 10px solid #000;
+        width : 100px;
+        position: absolute;
+        top: 700px;
+        left: 330px;
+    }
+
+    .hangmanbody{
+        border-top: 3px solid #000;
+        width : 80px;
+        position: absolute;
+        transform: rotate(90deg);
+        top: 552px;
+        left: 222px;
+    }
+
+    .hangmanleftarm{
+        border-top: 2px solid #000;
+        width : 40px;
+        position: absolute;
+        transform: rotate(45deg);
+        top: 540px;
+        left: 228px;
+    }
+
+    .hangmanrightarm{
+        border-top: 2px solid #000;
+        width : 40px;
+        position: absolute;
+        transform: rotate(-45deg);
+        top: 540px;
+        left: 256px;
+    }
+
+    .hangmanleftleg{
+        border-top: 2px solid #000;
+        width : 40px;
+        position: absolute;
+        transform: rotate(45deg);
+        top: 606px;
+        left: 256px;
+    }
+
+    .hangmanrightleg{
+        border-top: 2px solid #000;
+        width : 40px;
+        position: absolute;
+        transform: rotate(-45deg);
+        top: 606px;
+        left: 228px;
+    }
+
+    .red{
+        margin-top: 10%;
+        color: red;
+        font-weight: bolder ;
+    }
+
+    .hangmanpicture{
+        filter: invert(100%);
+        width: 20%;
+        text-align: center;
+    }
+    
+    .username{
+        text-align: center;
+        font-family: 'Rubik Doodle Shadow';
+        color: darkorange;
+    }
+    
+    form h4{
+        text-transform: capitalize;
+        font-weight:bolder;
+        font-size: 25px;
+    }   
+    
+    h4.error{
+        text-align: center;
+        color: red;
+        font-weight: bold;
+    }
+
+    .input {
+        width: 200px; 
+        height: 50px;
+        border-radius: 5px;
+        border: 2px solid darkorange;
+        background-color: rgb(245, 187, 130);
+        box-shadow: 4px 4px darkorange;
+        font-size: 15px;
+        font-weight: 600;
+        color: black;
+        padding: 5px 10px;
+        outline: none;
+    }
+    
+    .input::placeholder {
+        color: black;
+        opacity: 0.8;
+    }
+    
+    .input:focus {
+        border: 2px solid darkorange;
+    }
+
+    .buttonusername {
+        cursor: pointer;
+        width: 150px;
+        border: 2px solid darkorange;
+        background-color: rgb(245, 187, 130);
+        box-shadow: 4px 4px darkorange;
+        color: black;
+        font-size: 15px;
+        display: flex;
+        justify-content: center;
+        margin-left: 35%;
+        margin-top: 4%;
+        font-weight: bolder;
+        font-family: 'Rubik Doodle Shadow';
+    }
+
+    .buttonusername:hover{
+        border: 2px solid rgb(245, 187, 130);
+        background-color: darkorange;
+        box-shadow: 4px 4px darkorange;
+    }
+
+    .hangmancrossleft{
+        width: 10px;
+        position: absolute;
+        top: 510px;
+        left: 254px;
+    }
+
+    .hangmancrossright{
+        width: 10px;
+        position: absolute;
+        top: 510px;
+        left: 264px;
+    }
+
+    .hangmantongue{
+        width: 25px;
+        position: absolute;
+        top: 512px;
+        left: 254px;
+    }
+
+    .ez {
+        margin-left: auto;
+        margin-right: auto;
+        cursor: pointer;
+        width: 184px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 120%;
+        font-weight: bolder;
+        background: green;
+        border: 2px solid darkgreen;
+        border-radius: .75rem;
+        box-shadow: 0 8px 0 darkgreen;
+    }
+      
+    .ez:hover {
+        transform: translateY(8px);
+        border: 1px solid darkgreen;
+        box-shadow: 0 4px 0 darkgreen;
+    }
+    
+    .med {
+        margin-left: auto;
+        margin-right: auto;
+        cursor: pointer;
+        width: 184px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 120%;
+        font-weight: bolder;
+        background: orange;
+        border: 2px solid darkorange;
+        border-radius: .75rem;
+        box-shadow: 0 8px 0 darkorange;
+    }
+      
+    .med:hover {
+        transform: translateY(8px);
+        border: 1px solid darkorange;
+        box-shadow: 0 4px 0 darkorange;
+    }
+    
+    .hard {
+        margin-left: auto;
+        margin-right: auto;
+        cursor: pointer;
+        width: 184px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 120%;
+        font-weight: bolder;
+        background: red;
+        border: 2px solid darkred;
+        border-radius: .75rem;
+        box-shadow: 0 8px 0 darkred;
+    }
+      
+    .hard:hover {
+        transform: translateY(8px);
+        border: 1px solid darkred;
+        box-shadow: 0 4px 0 darkred;
+    }
+    
+    button a{
+        text-decoration: none;
+        color:#000;
+        width: 100%;
+        padding-bottom: 15%;
+        padding-top: 15%;
+    }
+    
+    
+    .level{
+        display:flex;
+        margin-top:15%;
+    }
+    
+    table{
+        border: 2px solid darkorange;
+        width: 90%;
+        margin:auto;
+        margin-top: 4%;
+        background-color: rgb(245, 187, 130);
+        border-radius: 5px;
+    }
+    
+    .titlerank{
+        border-bottom: 2px solid darkorange;
+        font-size: 200%; 
+        font-family: 'Rubik Doodle Shadow';
+        padding: 10px;
+    }
+    
+    tr.scoreboard{
+        background : darkorange;
+    }
+    
+    .rank{
+        text-align: center;
+        font-family: 'Rubik Doodle Shadow';
+        font-weight: bolder;
+    }
+    
+    .stats{
+        text-align: center;
+        padding:4px;
+        border-bottom: 2px solid darkorange;
+        border-top: 2px solid darkorange;
+        font-weight: 500;
+    }
+    
+    .restart{
+        margin-left: 42%;
+        margin-bottom: 50px;
+        cursor: pointer;
+        width: 184px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 120%;
+        font-weight: bolder;
+        background: orange;
+        border: 2px solid darkorange;
+        border-radius: .75rem;
+        box-shadow: 0 8px 0 darkorange;
+    }
+    
+    .restart:hover{
+        transform: translateY(8px);
+    }
+    
+    p.title{
+        font-size: 50px;
+        text-decoration:underline;
+        margin-top: 10%;
+        text-align: center;
+        color :rgb(255, 154, 53);
+        font-family:'Rubik Doodle Shadow' ;
+    }
+    
+    .help{
+        text-align: center;
+        padding:4px;
+        border-bottom: 2px solid darkorange;
+        border-top: 2px solid darkorange;
+        border-left: 2px solid darkorange;
+        border-right: 2px solid darkorange;
+        font-weight: 500;
+    }
+    
+    .Button {
+        width: 70px;
+        height: 55px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        background-color: transparent;
+        position: relative;
+        border-radius: 7px;
+        cursor: pointer;
+    }
+      
+    .img {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        border-radius: 10px;
+        border: 1px solid rgba(156, 156, 156, 0.466);
+    }
+      
+    .Back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #181818;
+        z-index: -1;
+        border-radius: 10px;
+    }
+      
+    .Button:hover .img {
+        background-color: rgba(156, 156, 156, 0.466);
+    }
+      
+    .Background {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #0077b5;
+        z-index: -1;
+        border-radius: 10px;
+    }
+    
+    .Bg{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #7289da;
+        z-index: -1;
+        border-radius: 10px;
+    }
+    
+    .contact{
+        display: flex;
+        margin-left: 34%;
+        gap: 10%;
+    }
+}
+
+@media all and (max-width:650px){
+
+    body{
+        font-family: 'Courier New', Courier, monospace;
+        color: black;
+        background : linear-gradient(to right, rgb(145, 145, 145), rgb(53, 52, 52))
+    }
+        
+    p{
+        text-align: center;
+        font-family:'Courier New', Courier, monospace;
+        color: black;
+        font-weight: 600;
+    }
+
+    .orange{
+        color:orange
+    }
+        
+    nav {
+        margin:-10px auto;
+        width: 100%;
+        height: 80px;
+        background: linear-gradient(to top, rgb(192, 145, 59),rgb(166, 106, 33)); 
+    }	
+        
+    nav .head {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+        
+    nav .head a {
+        width: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 80px;
+        text-decoration: none;
+        font-family: 'Rubik Doodle Shadow';
+        font-weight: bolder;
+        text-transform: uppercase;
+        color: lightgray;
+    }
+        
+    nav a:hover {
+        background: rgb(131, 130, 133)
+    }
+        
+    .Welcome{
+        text-align: center;
+        color: rgb(255, 154, 53);
+        font-size: 65px;
+        margin-top: 10%;
+        text-transform: uppercase;
+        font-weight: 900;
+        font-family: 'Rubik Doodle Shadow';
+        animation: mymove 4s;
+    }
+    
+    .white{
+        color: white;
+        text-shadow: 2px 2px 4px black;
+    }
+    
+    @keyframes mymove {
+        0% {
+            color: rgba(255, 0, 0, 0);
+            text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+        }
+        100% {
+            color: rgb(255, 154, 53);
+            text-shadow: 2px 2px 4px black;
+        }
+    }
+        
+    h1.title{
+        text-decoration:underline;
+        margin-top: 2%;
+        text-align: center;
+        color :  rgb(255, 154, 53);
+        font-family:'Rubik Doodle Shadow' ;
+    }
+        
+    .informations{
+        margin-left: auto;
+        margin-right: auto;
+        height: 300px;
+        background:linear-gradient(to right, rgb(254, 208, 161),rgb(245, 187, 130));
+        border-bottom: 5px solid rgb(255, 154, 53);
+        border-top: 5px solid rgb(255, 154, 53);
+        border-left: 5px solid rgb(255, 154, 53);
+        border-right: 5px solid rgb(255, 154, 53);
+        text-align: center;
+        width: 48%;
+        margin-top: 1%;
+    }
+
+    .choose{
+        margin-left: auto;
+        margin-right: auto;
+        height: 220px;
+        background:linear-gradient(to right, rgb(254, 208, 161),rgb(245, 187, 130));
+        border-bottom: 5px solid rgb(255, 154, 53);
+        border-top: 5px solid rgb(255, 154, 53);
+        border-left: 5px solid rgb(255, 154, 53);
+        border-right: 5px solid rgb(255, 154, 53);
+        text-align: center;
+        width: 48%;
+        margin-top : 10px; 
+    }
+
+    .hangman{
+        margin-left: auto;
+        margin-right: auto;
+        height: 520px;
+        background:linear-gradient(to right, rgb(254, 208, 161),rgb(245, 187, 130));
+        border-bottom: 5px solid rgb(255, 154, 53);
+        border-top: 5px solid rgb(255, 154, 53);
+        border-left: 5px solid rgb(255, 154, 53);
+        border-right: 5px solid rgb(255, 154, 53);
+        text-align: center;
+        width: 49%;
+        margin-top : 1%;
+    }
+
+    .hangmanhead{
+        background:black;
+        border-radius:50%;
+        width:30px;
+        height:30px;
+        position: absolute;
+        top: 503px;
+        left: 167px;
+    }
+
+    .hangmanrope{
+        border-top: 1px solid #000;
+        width : 45px;
+        transform: rotate(90deg);
+        position: absolute;
+        top: 480px;
+        left: 160px;
+    }
+
+    .hangmanhorizontalwood{
+        border-top: 3px solid #000;
+        width : 140px;
+        position: absolute;
+        top: 455px;
+        left: 163px;
+    }
+
+    .hangmanverticalwood{
+        border-top: 3px solid #000;
+        width : 250px;
+        transform: rotate(90deg);
+        position: absolute;
+        top: 580px;
+        left: 177px;
+    }
+
+    .hangmanpillar{
+        border-top: 3px solid #000;
+        width : 25px;
+        transform: rotate(45deg);
+        position: absolute;
+        top: 463px;
+        left: 280px;
+    }
+
+    .hangmanbegin{
+        border-top: 10px solid #000;
+        width : 100px;
+        position: absolute;
+        top: 700px;
+        left: 250px;
+    }
+
+    .hangmanbody{
+        border-top: 3px solid #000;
+        width : 80px;
+        position: absolute;
+        transform: rotate(90deg);
+        top: 552px;
+        left: 142px;
+    }
+
+    .hangmanleftarm{
+        border-top: 2px solid #000;
+        width : 40px;
+        position: absolute;
+        transform: rotate(45deg);
+        top: 540px;
+        left: 148px;
+    }
+
+    .hangmanrightarm{
+        border-top: 2px solid #000;
+        width : 40px;
+        position: absolute;
+        transform: rotate(-45deg);
+        top: 540px;
+        left: 176px;
+    }
+
+    .hangmanleftleg{
+        border-top: 2px solid #000;
+        width : 40px;
+        position: absolute;
+        transform: rotate(45deg);
+        top: 606px;
+        left: 176px;
+    }
+
+    .hangmanrightleg{
+        border-top: 2px solid #000;
+        width : 40px;
+        position: absolute;
+        transform: rotate(-45deg);
+        top: 606px;
+        left: 148px;
+    }
+
+    .red{
+        margin-top: 10%;
+        color: red;
+        font-weight: bolder ;
+    }
+
+    .hangmanpicture{
+        filter: invert(100%);
+        width: 20%;
+        text-align: center;
+    }
+    
+    .username{
+        text-align: center;
+        font-family: 'Rubik Doodle Shadow';
+        color: darkorange;
+    }
+    
+    form h4{
+        text-transform: capitalize;
+        font-weight:bolder;
+        font-size: 25px;
+    }   
+    
+    h4.error{
+        text-align: center;
+        color: red;
+        font-weight: bold;
+    }
+
+    .input {
+        width: 200px; 
+        height: 50px;
+        border-radius: 5px;
+        border: 2px solid darkorange;
+        background-color: rgb(245, 187, 130);
+        box-shadow: 4px 4px darkorange;
+        font-size: 15px;
+        font-weight: 600;
+        color: black;
+        padding: 5px 10px;
+        outline: none;
+    }
+    
+    .input::placeholder {
+        color: black;
+        opacity: 0.8;
+    }
+    
+    .input:focus {
+        border: 2px solid darkorange;
+    }
+
+    .buttonusername {
+        cursor: pointer;
+        width: 150px;
+        border: 2px solid darkorange;
+        background-color: rgb(245, 187, 130);
+        box-shadow: 4px 4px darkorange;
+        color: black;
+        font-size: 15px;
+        display: flex;
+        justify-content: center;
+        margin-left: 35%;
+        margin-top: 4%;
+        font-weight: bolder;
+        font-family: 'Rubik Doodle Shadow';
+    }
+
+    .buttonusername:hover{
+        border: 2px solid rgb(245, 187, 130);
+        background-color: darkorange;
+        box-shadow: 4px 4px darkorange;
+    }
+
+    .hangmancrossleft{
+        width: 10px;
+        position: absolute;
+        top: 510px;
+        left: 174px;
+    }
+
+    .hangmancrossright{
+        width: 10px;
+        position: absolute;
+        top: 510px;
+        left: 184px;
+    }
+
+    .hangmantongue{
+        width: 25px;
+        position: absolute;
+        top: 512px;
+        left: 174px;
+    }
+
+    .ez {
+        margin-left: auto;
+        margin-right: auto;
+        cursor: pointer;
+        width: 184px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 120%;
+        font-weight: bolder;
+        background: green;
+        border: 2px solid darkgreen;
+        border-radius: .75rem;
+        box-shadow: 0 8px 0 darkgreen;
+    }
+      
+    .ez:hover {
+        transform: translateY(8px);
+        border: 1px solid darkgreen;
+        box-shadow: 0 4px 0 darkgreen;
+    }
+    
+    .med {
+        margin-left: auto;
+        margin-right: auto;
+        cursor: pointer;
+        width: 184px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 120%;
+        font-weight: bolder;
+        background: orange;
+        border: 2px solid darkorange;
+        border-radius: .75rem;
+        box-shadow: 0 8px 0 darkorange;
+    }
+      
+    .med:hover {
+        transform: translateY(8px);
+        border: 1px solid darkorange;
+        box-shadow: 0 4px 0 darkorange;
+    }
+    
+    .hard {
+        margin-left: auto;
+        margin-right: auto;
+        cursor: pointer;
+        width: 184px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 120%;
+        font-weight: bolder;
+        background: red;
+        border: 2px solid darkred;
+        border-radius: .75rem;
+        box-shadow: 0 8px 0 darkred;
+    }
+      
+    .hard:hover {
+        transform: translateY(8px);
+        border: 1px solid darkred;
+        box-shadow: 0 4px 0 darkred;
+    }
+    
+    button a{
+        text-decoration: none;
+        color:#000;
+        width: 100%;
+        padding-bottom: 15%;
+        padding-top: 15%;
+    }
+    
+    
+    .level{
+        display:flex;
+        margin-top:15%;
+    }
+    
+    table{
+        border: 2px solid darkorange;
+        width: 90%;
+        margin:auto;
+        margin-top: 4%;
+        background-color: rgb(245, 187, 130);
+        border-radius: 5px;
+    }
+    
+    .titlerank{
+        border-bottom: 2px solid darkorange;
+        font-size: 200%; 
+        font-family: 'Rubik Doodle Shadow';
+        padding: 10px;
+    }
+    
+    tr.scoreboard{
+        background : darkorange;
+    }
+    
+    .rank{
+        text-align: center;
+        font-family: 'Rubik Doodle Shadow';
+        font-weight: bolder;
+    }
+    
+    .stats{
+        text-align: center;
+        padding:4px;
+        border-bottom: 2px solid darkorange;
+        border-top: 2px solid darkorange;
+        font-weight: 500;
+    }
+    
+    .restart{
+        margin-left: 42%;
+        margin-bottom: 50px;
+        cursor: pointer;
+        width: 184px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 120%;
+        font-weight: bolder;
+        background: orange;
+        border: 2px solid darkorange;
+        border-radius: .75rem;
+        box-shadow: 0 8px 0 darkorange;
+    }
+    
+    .restart:hover{
+        transform: translateY(8px);
+    }
+    
+    p.title{
+        font-size: 50px;
+        text-decoration:underline;
+        margin-top: 10%;
+        text-align: center;
+        color :rgb(255, 154, 53);
+        font-family:'Rubik Doodle Shadow' ;
+    }
+    
+    .help{
+        text-align: center;
+        padding:4px;
+        border-bottom: 2px solid darkorange;
+        border-top: 2px solid darkorange;
+        border-left: 2px solid darkorange;
+        border-right: 2px solid darkorange;
+        font-weight: 500;
+    }
+    
+    .Button {
+        width: 70px;
+        height: 55px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        background-color: transparent;
+        position: relative;
+        border-radius: 7px;
+        cursor: pointer;
+    }
+      
+    .img {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        border-radius: 10px;
+        border: 1px solid rgba(156, 156, 156, 0.466);
+    }
+      
+    .Back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #181818;
+        z-index: -1;
+        border-radius: 10px;
+    }
+      
+    .Button:hover .img {
+        background-color: rgba(156, 156, 156, 0.466);
+    }
+      
+    .Background {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #0077b5;
+        z-index: -1;
+        border-radius: 10px;
+    }
+    
+    .Bg{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #7289da;
+        z-index: -1;
+        border-radius: 10px;
+    }
+    
+    .contact{
+        display: flex;
+        margin-left: 34%;
+        gap: 10%;
+    }
+}

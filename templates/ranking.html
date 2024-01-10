@@ -1,0 +1,25 @@
+{{define "ranking"}}
+<table>
+    <thead>
+      <tr class="scoreboard">
+        <th class="titlerank" colspan="5">Scoreboard</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="scoreboard">
+        <td class="rank">UserName</td>
+        <td class="rank">Point</td>
+        <td class="rank">Level</td>
+        <td class="rank">Win</td>
+        <td class="rank">Loose</td>
+      </tr>
+      {{range .Scoreboard}}
+            <tr>
+                {{range .}}
+                    <td class="stats">{{.}}</td>
+                {{end}}
+            </tr>
+        {{end}}
+    </tbody>
+</table>
+{{end}}
