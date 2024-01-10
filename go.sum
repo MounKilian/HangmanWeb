@@ -2,6 +2,8 @@ github.com/MounKilian/hangman v0.0.0-20240104191217-7a20ce84feac h1:g91fs48LhNbm
 github.com/MounKilian/hangman v0.0.0-20240104191217-7a20ce84feac/go.mod h1:0SzvTXIaDhZ95qq7hX2xW+pVehQ1ykBDmTL3XflWvss=
 github.com/MounKilian/hangman v0.0.0-20240104192030-102bff16a1b0 h1:kL/tzQcQ5gPaFNACX4xYaELcDM7z7xW2KXkELcXBadA=
 github.com/MounKilian/hangman v0.0.0-20240104192030-102bff16a1b0/go.mod h1:0SzvTXIaDhZ95qq7hX2xW+pVehQ1ykBDmTL3XflWvss=
+github.com/MounKilian/hangman v0.0.0-20240109162008-3aeb3aa309df h1:ltUD2Zz6b6C91G6jVnkmErTL++K/FSYeofj8Xjdb1sE=
+github.com/MounKilian/hangman v0.0.0-20240109162008-3aeb3aa309df/go.mod h1:0SzvTXIaDhZ95qq7hX2xW+pVehQ1ykBDmTL3XflWvss=
 github.com/gdamore/encoding v1.0.0 h1:+7OoQ1Bc6eTm5niUzBa0Ctsh6JbMW6Ra+YNuAtDBdko=
 github.com/gdamore/encoding v1.0.0/go.mod h1:alR0ol34c49FCSBLjhosxzcPHQbf2trDkoo5dl+VrEg=
 github.com/gdamore/tcell/v2 v2.6.0 h1:OKbluoP9VYmJwZwq/iLb4BxwKcwGthaa1YNBJIyCySg=

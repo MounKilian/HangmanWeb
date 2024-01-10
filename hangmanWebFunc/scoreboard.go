@@ -10,6 +10,7 @@ import (
 	"github.com/MounKilian/hangman"
 )
 
+// Read data.csv file
 func Read(H *hangman.HangManData) {
 	f, err := os.Open("data.csv")
 	if err != nil {
@@ -28,6 +29,7 @@ func Read(H *hangman.HangManData) {
 	H.Scoreboard = records
 }
 
+// Write data.csv file
 func Write(H *hangman.HangManData) {
 	file, err := os.Create("data.csv")
 	if err != nil {
@@ -43,6 +45,7 @@ func Write(H *hangman.HangManData) {
 	writer.Write(H.NewScore)
 }
 
+// Update data in data.csv file
 func Update(H *hangman.HangManData) {
 	for _, record := range H.Scoreboard {
 		if record[0] == H.NewScore[0] && record[2] == H.NewScore[2] {
@@ -65,6 +68,7 @@ func Update(H *hangman.HangManData) {
 	writer.WriteAll(H.Scoreboard)
 }
 
+// Sort data in scoreboard
 func Refresh(H *hangman.HangManData) {
 	sort.Slice(H.Scoreboard, func(i, j int) bool {
 		value1, err1 := strconv.Atoi(H.Scoreboard[i][1])
@@ -92,4 +96,39 @@ func Refresh(H *hangman.HangManData) {
 			writer.Write(record)
 		}
 	}
+}
+
+// Read account.csv file
+func ReadSignIn() [][]string {
+	f, err := os.Open("account.csv")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer f.Close()
+
+	reader := csv.NewReader(f)
+
+	records, err := reader.ReadAll()
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	return records
+}
+
+// Write new account in account.csv
+func Save(AllAccount [][]string, Account []string) {
+	file, err := os.Create("account.csv")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer file.Close()
+
+	writer := csv.NewWriter(file)
+
+	defer writer.Flush()
+
+	writer.WriteAll(AllAccount)
+	writer.Write(Account)
 }

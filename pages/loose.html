@@ -8,14 +8,14 @@
     <body>
         {{template "header"}}
         <p class="title">LOOSE !</p><br>
-        <p>The word was {{.ToFind}} !</p>
+        <p class="white">The word was {{.ToFind}} !</p>
         {{template "ranking" .}}
-        <p> Congratulation {{.Username}} ! Your score in {{.Level}} level is {{.Point}} pts</p>
-        {{if eq .WordFile "words.txt"}}
+        <p class="white"> Congratulation {{.Username}} ! Your score in {{.Level}} level is {{.Point}} pts</p>
+        {{if eq .Level "easy"}}
             <button class="restart"><a href="/easygame">RESTART</a></button>
-        {{else if eq .WordFile "words2.txt"}}
+        {{else if eq .Level "medium"}}
             <button class="restart"><a href="/mediumgame">RESTART</a></button>
-        {{else if eq .WordFile "words3.txt"}}
+        {{else if eq .Level "hard"}}
             <button class="restart"><a href="/hardgame">RESTART</a></button>
         {{end}}
     </body>

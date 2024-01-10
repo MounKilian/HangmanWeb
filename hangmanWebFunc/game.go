@@ -44,7 +44,7 @@ func GameBack(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
 }
 
 func Menu(w http.ResponseWriter, r *http.Request) {
-	template, err := template.ParseFiles("./index.html", "./templates/header.html")
+	template, err := template.ParseFiles("./index.html", "./templates/header.html", "./templates/footer.html")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -52,7 +52,7 @@ func Menu(w http.ResponseWriter, r *http.Request) {
 }
 
 func Help(w http.ResponseWriter, r *http.Request) {
-	template, err := template.ParseFiles("./pages/help.html", "./templates/header.html")
+	template, err := template.ParseFiles("./pages/help.html", "./templates/header.html", "./templates/footer.html")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -101,12 +101,22 @@ func HardGame(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
 	http.Redirect(w, r, "/game", http.StatusFound)
 }
 
-func Login(w http.ResponseWriter, r *http.Request) {
+func Login(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
 	template, err := template.ParseFiles("./pages/login.html", "./templates/header.html")
 	if err != nil {
 		log.Fatal(err)
 	}
-	template.Execute(w, nil)
+	template.Execute(w, H)
+}
+
+func Change(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
+	H.Attempts = 0
+	if H.TypeOfGame {
+		H.TypeOfGame = false
+	} else {
+		H.TypeOfGame = true
+	}
+	http.Redirect(w, r, "/login", http.StatusFound)
 }
 
 func Scoreboard(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
@@ -120,7 +130,38 @@ func Scoreboard(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) 
 }
 
 func Username(w http.ResponseWriter, r *http.Request, H *hangman.HangManData) {
-	H.Username = r.FormValue("User")
-	H.Point = 0
-	http.Redirect(w, r, "/level", http.StatusFound)
+	if !H.TypeOfGame {
+		H.Username = r.FormValue("SignInUsername")
+		H.Password = r.FormValue("SignInPassword")
+		H.Email = r.FormValue("SignInEmail")
+		H.Point = 0
+		Account := []string{H.Username, H.Email, H.Password}
+		if Email(Account) {
+			AllAccount := ReadSignIn()
+			Save(AllAccount, Account)
+			http.Redirect(w, r, "/level", http.StatusFound)
+		} else {
+			H.Attempts = 1
+			http.Redirect(w, r, "/login", http.StatusFound)
+		}
+	} else {
+		H.Password = r.FormValue("LogInPassword")
+		H.Email = r.FormValue("LogInEmail")
+		Account := []string{H.Username, H.Email, H.Password}
+		if AcccountUse(Account, H) {
+			Log(H)
+			Update(H)
+			Read(H)
+			Refresh(H)
+			H.ToFind = hangman.RandomWord(string(("dic/" + H.WordFile)))
+			H.Word = hangman.RandomWordUnderscore(H.ToFind)
+			H.LetterInput = ""
+			H.Attempts = 10
+			hangman.FirstLetter(H)
+			http.Redirect(w, r, "/game", http.StatusFound)
+		} else {
+			H.Attempts = 2
+			http.Redirect(w, r, "/login", http.StatusFound)
+		}
+	}
 }
