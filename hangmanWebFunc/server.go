@@ -49,5 +49,5 @@ func Server() {
 	})
 	fs := http.FileServer(http.Dir("static/"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
-	http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(":0000", nil)
 }
